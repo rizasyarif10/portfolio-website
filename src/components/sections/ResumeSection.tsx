@@ -39,8 +39,8 @@ export function ResumeSection() {
             <p className="pt-5 font-mono text-[9px] leading-[1.5] font-bold tracking-[0.04em] text-[rgba(25,44,62,0.43)] uppercase max-[620px]:col-span-2 max-[620px]:pl-7 max-[620px]:pt-1 dark:text-[rgba(237,241,239,0.45)]">
               {localize(item.period, language)}
             </p>
-            <span className="relative z-[1] mt-[21px] grid size-[13px] place-items-center rounded-full border-2 border-[#f4f3ef] bg-[#5874d8] shadow-[0_0_0_3px_rgba(88,116,216,0.13)] max-[620px]:mt-[25px] dark:border-[#181c1f] dark:bg-[#aebeff]">
-              <span className="size-[3px] rounded-full bg-white dark:bg-[#181c1f]" />
+            <span className="relative z-[1] mt-[21px] grid size-[13px] place-items-center rounded-full border-2 border-[#f4f3ef] bg-[#5874d8] shadow-[0_0_0_3px_rgba(88,116,216,0.13)] max-[620px]:mt-[25px] dark:border-[#0b1726] dark:bg-[#aebeff]">
+              <span className="size-[3px] rounded-full bg-white dark:bg-[#0b1726]" />
             </span>
             <div className="rounded-[22px] border border-[rgba(25,44,62,0.11)] bg-white/40 p-5 transition-[transform,border-color,background-color,box-shadow] duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform hover:-translate-y-0.5 hover:border-[#5874d8]/25 hover:bg-white/65 hover:shadow-[0_16px_36px_rgba(25,44,62,0.07)] motion-reduce:transform-none motion-reduce:transition-none max-[620px]:mt-2 max-[420px]:rounded-[18px] max-[420px]:p-4 dark:border-white/10 dark:bg-white/[0.035] dark:hover:border-[#aebeff]/25 dark:hover:bg-white/[0.055] dark:hover:shadow-[0_16px_36px_rgba(0,0,0,0.14)]">
               <div className="flex items-center justify-between gap-4">

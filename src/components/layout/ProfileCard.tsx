@@ -14,7 +14,7 @@ export function ProfileCard() {
   return (
     <>
       <aside
-        className="profile-card flex min-h-0 flex-col overflow-hidden rounded-[28px] border border-[#7189df]/45 bg-[linear-gradient(155deg,#6c787e_0%,#3d464b_100%)] text-white max-[900px]:order-1 max-[900px]:grid max-[900px]:min-h-[420px] max-[900px]:grid-cols-[minmax(230px,0.9fr)_1.1fr] max-[620px]:flex max-[620px]:min-h-0 max-[420px]:rounded-[22px] dark:border-[#aebeff]/35 dark:bg-[linear-gradient(155deg,#4e5a60_0%,#282f33_100%)]"
+        className="profile-card flex min-h-0 flex-col overflow-hidden rounded-[28px] border border-[#7189df]/45 bg-[linear-gradient(155deg,#6c787e_0%,#3d464b_100%)] text-white max-[900px]:order-1 max-[900px]:grid max-[900px]:min-h-[420px] max-[900px]:grid-cols-[minmax(230px,0.9fr)_1.1fr] max-[620px]:flex max-[620px]:min-h-0 max-[420px]:rounded-[22px] dark:border-[#8fb7ff]/30 dark:bg-[linear-gradient(155deg,#17314a_0%,#0b1b2b_100%)]"
         aria-label="Profile summary"
       >
         <div className="relative h-[45%] min-h-[255px] overflow-hidden bg-[#d8d8d0] max-[900px]:h-full max-[900px]:min-h-0 max-[620px]:h-[clamp(290px,90vw,360px)] max-[620px]:min-h-[clamp(290px,90vw,360px)]">
@@ -25,7 +25,7 @@ export function ProfileCard() {
           />
           <span
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 bottom-0 h-[36%] bg-[linear-gradient(to_top,rgba(49,56,60,1)_0%,rgba(49,56,60,0.94)_34%,rgba(49,56,60,0.48)_68%,transparent_100%)] max-[620px]:h-[24%] max-[620px]:bg-[linear-gradient(to_top,rgba(49,56,60,0.96)_0%,rgba(49,56,60,0.72)_38%,rgba(49,56,60,0.24)_72%,transparent_100%)] dark:bg-[linear-gradient(to_top,rgba(40,47,51,1)_0%,rgba(40,47,51,0.94)_34%,rgba(40,47,51,0.5)_68%,transparent_100%)] dark:max-[620px]:bg-[linear-gradient(to_top,rgba(40,47,51,0.96)_0%,rgba(40,47,51,0.72)_38%,rgba(40,47,51,0.26)_72%,transparent_100%)]"
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-[36%] bg-[linear-gradient(to_top,rgba(49,56,60,1)_0%,rgba(49,56,60,0.94)_34%,rgba(49,56,60,0.48)_68%,transparent_100%)] max-[620px]:h-[24%] max-[620px]:bg-[linear-gradient(to_top,rgba(49,56,60,0.96)_0%,rgba(49,56,60,0.72)_38%,rgba(49,56,60,0.24)_72%,transparent_100%)] dark:bg-[linear-gradient(to_top,rgba(11,27,43,1)_0%,rgba(11,27,43,0.94)_34%,rgba(11,27,43,0.48)_68%,transparent_100%)] dark:max-[620px]:bg-[linear-gradient(to_top,rgba(11,27,43,0.96)_0%,rgba(11,27,43,0.72)_38%,rgba(11,27,43,0.24)_72%,transparent_100%)]"
           />
           <LanguageToggle />
           <ThemeToggle />

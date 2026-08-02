@@ -78,7 +78,7 @@ export function ContactSection() {
         title={localize(TEXT.contact.title, language)}
         note={localize(TEXT.contact.note, language)}
       />
-      <div className="overflow-hidden rounded-[24px] border border-[#7189df]/45 bg-[#252a2d] dark:border-[#aebeff]/35">
+      <div className="overflow-hidden rounded-[24px] border border-[#7189df]/45 bg-[#252a2d] dark:border-[#8fb7ff]/30 dark:bg-[#0d2238]">
         <header className="flex min-h-[74px] items-center justify-between gap-4 px-5 py-[14px] text-[#f2f4ef] max-[620px]:flex-col max-[620px]:items-start max-[620px]:gap-2 max-[620px]:px-4 max-[620px]:py-4 max-[420px]:px-3.5 max-[420px]:py-3.5">
           <div className="relative pl-4 before:absolute before:top-0 before:bottom-0 before:left-0 before:w-[2px] before:rounded-full before:bg-[linear-gradient(to_bottom,#5874d8,#f2a541)]">
             <strong className="block text-xs font-bold">

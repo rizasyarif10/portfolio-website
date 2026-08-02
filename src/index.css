@@ -23,31 +23,31 @@
     @apply m-0 min-h-screen min-w-80 overflow-hidden max-[900px]:overflow-auto max-[900px]:pb-16;
     background:
       radial-gradient(
-        circle at 8% 4%,
-        rgba(100, 116, 124, 0.2),
-        transparent 34%
+        circle at 9% 5%,
+        rgba(88, 116, 216, 0.22),
+        transparent 38%
       ),
       radial-gradient(
-        circle at 92% 94%,
-        rgba(150, 165, 137, 0.22),
-        transparent 32%
+        circle at 91% 93%,
+        rgba(210, 138, 34, 0.16),
+        transparent 36%
       ),
-      linear-gradient(135deg, #efeeea 0%, #dde0e1 52%, #e7e4de 100%);
+      linear-gradient(135deg, #f5f2eb 0%, #d9e3ec 52%, #e8dfd2 100%);
   }
 
   html[data-theme="dark"] body {
     background:
       radial-gradient(
         circle at 8% 4%,
-        rgba(105, 122, 130, 0.2),
+        rgba(72, 111, 164, 0.24),
         transparent 36%
       ),
       radial-gradient(
         circle at 92% 94%,
-        rgba(143, 159, 127, 0.16),
+        rgba(61, 94, 138, 0.2),
         transparent 34%
       ),
-      linear-gradient(135deg, #111416 0%, #191d20 52%, #171815 100%);
+      linear-gradient(135deg, #06101d 0%, #0b1b2d 52%, #10263d 100%);
   }
 
   a {

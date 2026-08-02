@@ -80,7 +80,7 @@ export function AboutSection() {
 
             <a
               href="#projects"
-              className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#252a2d] px-5 py-3 text-xs font-bold text-white transition-[transform,background-color] duration-300 hover:-translate-y-0.5 hover:bg-[#5874d8] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#5874d8] dark:bg-[#edf1ef] dark:text-[#181c1f] dark:hover:bg-[#aebeff]"
+              className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#252a2d] px-5 py-3 text-xs font-bold text-white transition-[transform,background-color] duration-300 hover:-translate-y-0.5 hover:bg-[#5874d8] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#5874d8] dark:bg-[#edf1ef] dark:text-[#0b1726] dark:hover:bg-[#aebeff]"
               onClick={(event) => navigateToSection(event, "#projects")}
             >
               {localize(TEXT.about.exploreWork, language)}

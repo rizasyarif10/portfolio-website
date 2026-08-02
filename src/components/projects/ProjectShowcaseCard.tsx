@@ -75,7 +75,7 @@ export function ProjectShowcaseCard({
         </div>
         {project.href && (
           <a
-            className="mt-5 flex w-fit items-center gap-2 rounded-full bg-[#252a2d] px-4 py-2.5 text-[10px] font-bold text-white transition-[transform,background-color] duration-300 hover:-translate-y-px hover:bg-[#5874d8] dark:bg-[#edf1ef] dark:text-[#181c1f] dark:hover:bg-[#aebeff]"
+            className="mt-5 flex w-fit items-center gap-2 rounded-full bg-[#252a2d] px-4 py-2.5 text-[10px] font-bold text-white transition-[transform,background-color] duration-300 hover:-translate-y-px hover:bg-[#5874d8] dark:bg-[#edf1ef] dark:text-[#0b1726] dark:hover:bg-[#aebeff]"
             href={project.href}
             target="_blank"
             rel="noreferrer"

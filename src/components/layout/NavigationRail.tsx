@@ -34,7 +34,7 @@ export function NavigationRail() {
 
   return (
     <aside
-      className="nav-rail flex min-h-0 flex-col items-center overflow-hidden rounded-3xl border border-[rgba(25,44,62,0.12)] bg-[#252a2d] text-[#eef1ed] shadow-[0_14px_45px_rgba(25,44,62,0.08)] max-[900px]:hidden dark:border-white/[0.09] dark:bg-[#0d1012] dark:shadow-[0_16px_50px_rgba(0,0,0,0.28)]"
+      className="nav-rail flex min-h-0 flex-col items-center overflow-hidden rounded-3xl border border-[rgba(25,44,62,0.12)] bg-[#252a2d] text-[#eef1ed] shadow-[0_14px_45px_rgba(25,44,62,0.08)] max-[900px]:hidden dark:border-[#8fb7ff]/15 dark:bg-[#061321] dark:shadow-[0_16px_50px_rgba(2,8,18,0.4)]"
       aria-label="Portfolio navigation"
     >
       <a

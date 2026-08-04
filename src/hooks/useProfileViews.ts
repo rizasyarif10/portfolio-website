@@ -9,9 +9,14 @@ type ProfileViewsResponse = {
 };
 
 function createVisitorId() {
-  if (typeof crypto.randomUUID === "function") return crypto.randomUUID();
+  if (typeof globalThis.crypto.randomUUID === "function") {
+    return globalThis.crypto.randomUUID();
+  }
 
-  return `${Date.now().toString(36)}_${Math.random().toString(36).slice(2)}_${Math.random().toString(36).slice(2)}`;
+  const randomBytes = globalThis.crypto.getRandomValues(new Uint8Array(16));
+  return Array.from(randomBytes, (byte) =>
+    byte.toString(16).padStart(2, "0"),
+  ).join("");
 }
 
 function getVisitorId() {

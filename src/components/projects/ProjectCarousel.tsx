@@ -51,7 +51,7 @@ export function ProjectCarousel({
     <div>
       <div className="mb-5 flex items-center justify-between gap-4 max-[420px]:gap-2">
         <div className="flex items-center gap-3">
-          <span className="grid size-9 place-items-center rounded-[12px] bg-[#5874d8]/10 text-[#5874d8] max-[420px]:size-8 max-[420px]:rounded-[10px] dark:bg-[#aebeff]/10 dark:text-[#aebeff]">
+          <span className="grid size-9 place-items-center rounded-xl bg-[#5874d8]/10 text-[#5874d8] max-[420px]:size-8 max-[420px]:rounded-[10px] dark:bg-[#aebeff]/10 dark:text-[#aebeff]">
             <Icon size={17} strokeWidth={1.8} />
           </span>
           <h3 className="text-[15px] font-bold tracking-[-0.02em] max-[420px]:text-[13px]">{title}</h3>
@@ -65,7 +65,7 @@ export function ProjectCarousel({
             </span>
             <button
               type="button"
-              className="grid size-8 place-items-center rounded-full border border-[rgba(25,44,62,0.12)] bg-white/40 text-[#192c3e] transition-[transform,background-color,color] duration-300 hover:-translate-y-px hover:bg-[#252a2d] hover:text-white dark:border-white/10 dark:bg-white/[0.04] dark:text-[#edf1ef] dark:hover:bg-[#edf1ef] dark:hover:text-[#0b1726]"
+              className="grid size-8 place-items-center rounded-full border border-[rgba(25,44,62,0.12)] bg-white/40 text-[#192c3e] transition-[transform,background-color,color] duration-300 hover:-translate-y-px hover:bg-[#252a2d] hover:text-white dark:border-white/10 dark:bg-white/4 dark:text-[#edf1ef] dark:hover:bg-[#edf1ef] dark:hover:text-[#0b1726]"
               onClick={() => moveTo(activeIndex - 1)}
               aria-label={localize(TEXT.work.previousProject, language)}
             >
@@ -73,7 +73,7 @@ export function ProjectCarousel({
             </button>
             <button
               type="button"
-              className="grid size-8 place-items-center rounded-full border border-[rgba(25,44,62,0.12)] bg-white/40 text-[#192c3e] transition-[transform,background-color,color] duration-300 hover:-translate-y-px hover:bg-[#252a2d] hover:text-white dark:border-white/10 dark:bg-white/[0.04] dark:text-[#edf1ef] dark:hover:bg-[#edf1ef] dark:hover:text-[#0b1726]"
+              className="grid size-8 place-items-center rounded-full border border-[rgba(25,44,62,0.12)] bg-white/40 text-[#192c3e] transition-[transform,background-color,color] duration-300 hover:-translate-y-px hover:bg-[#252a2d] hover:text-white dark:border-white/10 dark:bg-white/4 dark:text-[#edf1ef] dark:hover:bg-[#edf1ef] dark:hover:text-[#0b1726]"
               onClick={() => moveTo(activeIndex + 1)}
               aria-label={localize(TEXT.work.nextProject, language)}
             >

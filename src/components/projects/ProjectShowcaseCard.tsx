@@ -19,7 +19,7 @@ export function ProjectShowcaseCard({
 }: ProjectShowcaseCardProps) {
   return (
     <article
-      className={`group relative grid h-full gap-5 overflow-hidden rounded-[24px] border border-[rgba(25,44,62,0.12)] bg-white/45 p-5 transition-[border-color,background-color] duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] before:absolute before:top-0 before:right-0 before:left-0 before:h-[3px] before:origin-left before:scale-x-0 before:bg-[linear-gradient(90deg,#5874d8,#d28a22)] before:transition-transform before:duration-[520ms] before:ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-[#5874d8]/30 hover:bg-white/75 hover:before:scale-x-100 motion-reduce:transition-none max-[760px]:grid-cols-1 max-[760px]:grid-rows-[auto_1fr] max-[420px]:gap-4 max-[420px]:rounded-[20px] max-[420px]:p-3.5 dark:border-white/10 dark:bg-white/[0.035] dark:hover:border-[#aebeff]/30 dark:hover:bg-white/[0.065] ${
+      className={`group relative grid h-full gap-5 overflow-hidden rounded-3xl border border-[rgba(25,44,62,0.12)] bg-white/45 p-5 transition-[border-color,background-color] duration-420 ease-[cubic-bezier(0.22,1,0.36,1)] before:absolute before:top-0 before:right-0 before:left-0 before:h-0.75 before:origin-left before:scale-x-0 before:bg-[linear-gradient(90deg,#5874d8,#d28a22)] before:transition-transform before:duration-520 before:ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-[#5874d8]/30 hover:bg-white/75 hover:before:scale-x-100 motion-reduce:transition-none max-[760px]:grid-cols-1 max-[760px]:grid-rows-[auto_1fr] max-[420px]:gap-4 max-[420px]:rounded-[20px] max-[420px]:p-3.5 dark:border-white/10 dark:bg-white/[0.035] dark:hover:border-[#aebeff]/30 dark:hover:bg-white/6.5 ${
         reverse
           ? "grid-cols-[minmax(240px,0.78fr)_minmax(0,1.22fr)]"
           : "grid-cols-[minmax(0,1.22fr)_minmax(240px,0.78fr)]"
@@ -55,7 +55,7 @@ export function ProjectShowcaseCard({
         <p className="mt-3 text-[13px] leading-[1.68] text-[rgba(25,44,62,0.6)] max-[420px]:text-[12px] dark:text-[rgba(237,241,239,0.61)]">
           {localize(project.description, language)}
         </p>
-        <div className="mt-4 border-t border-[rgba(25,44,62,0.09)] pt-4 dark:border-white/[0.08]">
+        <div className="mt-4 border-t border-[rgba(25,44,62,0.09)] pt-4 dark:border-white/8">
           <span className="block text-[8px] font-bold tracking-[0.11em] text-[#657780] uppercase dark:text-[#b4c0a5]">
             {localize(TEXT.work.contribution, language)}
           </span>
@@ -66,7 +66,7 @@ export function ProjectShowcaseCard({
         <div className="mt-4 flex flex-wrap gap-1.5">
           {project.stack.map((technology) => (
             <small
-              className="rounded-full border border-[rgba(25,44,62,0.1)] bg-white/55 px-2.5 py-1.5 text-[9px] font-bold text-[#657780] dark:border-white/10 dark:bg-white/[0.04] dark:text-[#b4c0a5]"
+              className="rounded-full border border-[rgba(25,44,62,0.1)] bg-white/55 px-2.5 py-1.5 text-[9px] font-bold text-[#657780] dark:border-white/10 dark:bg-white/4 dark:text-[#b4c0a5]"
               key={technology}
             >
               {technology}

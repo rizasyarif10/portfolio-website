@@ -10,7 +10,7 @@ import { ProjectsSection } from "./components/sections/ProjectsSection";
 
 function App() {
   return (
-    <div className="mx-auto grid h-dvh w-full max-w-[1480px] grid-cols-[84px_minmax(540px,1fr)_340px] gap-3 bg-[radial-gradient(circle_at_9%_5%,rgba(88,116,216,0.22),transparent_38%),radial-gradient(circle_at_91%_93%,rgba(210,138,34,0.16),transparent_36%),linear-gradient(135deg,#f5f2eb_0%,#d9e3ec_52%,#e8dfd2_100%)] p-4 max-[1120px]:grid-cols-[72px_minmax(500px,1fr)_290px] max-[1120px]:p-3 max-[900px]:flex max-[900px]:h-auto max-[900px]:min-h-screen max-[900px]:flex-col max-[900px]:gap-2.5 max-[900px]:p-2.5 max-[420px]:gap-1.5 max-[420px]:p-1.5 dark:bg-[radial-gradient(circle_at_8%_4%,rgba(72,111,164,0.24),transparent_36%),radial-gradient(circle_at_92%_94%,rgba(61,94,138,0.2),transparent_34%),linear-gradient(135deg,#06101d_0%,#0b1b2d_52%,#10263d_100%)]">
+    <div className="mx-auto grid h-dvh w-full max-w-370 grid-cols-[84px_minmax(540px,1fr)_340px] gap-3 bg-[radial-gradient(circle_at_9%_5%,rgba(88,116,216,0.22),transparent_38%),radial-gradient(circle_at_91%_93%,rgba(210,138,34,0.16),transparent_36%),linear-gradient(135deg,#f5f2eb_0%,#d9e3ec_52%,#e8dfd2_100%)] p-4 max-[1120px]:grid-cols-[72px_minmax(500px,1fr)_290px] max-[1120px]:p-3 max-[900px]:flex max-[900px]:h-auto max-[900px]:min-h-screen max-[900px]:flex-col max-[900px]:gap-2.5 max-[900px]:p-2.5 max-[420px]:gap-1.5 max-[420px]:p-1.5 dark:bg-[radial-gradient(circle_at_8%_4%,rgba(72,111,164,0.24),transparent_36%),radial-gradient(circle_at_92%_94%,rgba(61,94,138,0.2),transparent_34%),linear-gradient(135deg,#06101d_0%,#0b1b2d_52%,#10263d_100%)]">
       <NavigationRail />
 
       <main

@@ -3,6 +3,10 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
+  build: {
+    // MapLibre is loaded only when the Contact section requests the map.
+    chunkSizeWarningLimit: 1000,
+  },
   optimizeDeps: {
     exclude: ["maplibre-gl"],
   },

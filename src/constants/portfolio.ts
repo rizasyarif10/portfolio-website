@@ -63,7 +63,7 @@ export const PROFILE: Profile = {
     "(max-width: 620px) calc(100vw - 16px), (max-width: 900px) 42vw, 360px",
   cv: "/Mochamad-Riza-Syarif-CV.pdf",
   atsCv: "/Mochamad-Riza-Syarif-CV-ATS.pdf",
-  linkedIn: "https://www.linkedin.com/in/mochamad-riza",
+  linkedIn: "https://www.linkedin.com/in/mochamad-riza-syarif/",
   github: "https://github.com/rizasyarif10",
 };
 

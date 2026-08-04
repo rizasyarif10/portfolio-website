@@ -16,7 +16,7 @@ type ProjectGalleryProps = {
 
 function PlaceholderCanvas({ variant }: { variant: ProjectPreviewVariant }) {
   const shell =
-    "rounded-[7px] border border-white/[0.08] bg-white/[0.07]";
+    "rounded-[7px] border border-white/8 bg-white/[0.07]";
 
   return (
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_18%,rgba(88,116,216,0.34),transparent_34%),linear-gradient(145deg,#1d2529_0%,#293237_100%)] p-[clamp(9px,2vw,16px)]">
@@ -25,7 +25,7 @@ function PlaceholderCanvas({ variant }: { variant: ProjectPreviewVariant }) {
           <span className="size-1.5 rounded-full bg-[#f2b85c]/75" />
           <span className="size-1.5 rounded-full bg-white/20" />
           <span className="size-1.5 rounded-full bg-[#aebeff]/55" />
-          <span className="ml-auto h-1.5 w-14 rounded-full bg-white/[0.08]" />
+          <span className="ml-auto h-1.5 w-14 rounded-full bg-white/8" />
         </div>
 
         {variant === "dashboard" && (
@@ -72,8 +72,8 @@ function PlaceholderCanvas({ variant }: { variant: ProjectPreviewVariant }) {
                     <span className="block h-1 w-3/5 rounded-full bg-white/10" />
                   </span>
                 </div>
-                <span className="mt-3 block h-1.5 rounded-full bg-white/[0.08]" />
-                <span className="mt-1.5 block h-1.5 w-4/5 rounded-full bg-white/[0.08]" />
+                <span className="mt-3 block h-1.5 rounded-full bg-white/8" />
+                <span className="mt-1.5 block h-1.5 w-4/5 rounded-full bg-white/8" />
               </div>
             ))}
           </div>
@@ -81,8 +81,8 @@ function PlaceholderCanvas({ variant }: { variant: ProjectPreviewVariant }) {
 
         {variant === "mobile" && (
           <div className="grid min-h-0 flex-1 place-items-center p-2">
-            <div className="h-[92%] w-[34%] min-w-[72px] rounded-[13px] border border-white/15 bg-[#20282c] p-1.5 shadow-[0_14px_28px_rgba(0,0,0,0.3)]">
-              <div className="h-full rounded-[9px] bg-white/[0.06] p-2">
+            <div className="h-[92%] w-[34%] min-w-18 rounded-[13px] border border-white/15 bg-[#20282c] p-1.5 shadow-[0_14px_28px_rgba(0,0,0,0.3)]">
+              <div className="h-full rounded-[9px] bg-white/6 p-2">
                 <span className="mx-auto block h-1 w-7 rounded-full bg-white/15" />
                 <span className="mt-3 block h-12 rounded-[7px] bg-[linear-gradient(135deg,rgba(88,116,216,0.72),rgba(242,184,92,0.42))]" />
                 <div className="mt-2 grid grid-cols-2 gap-1.5">
@@ -119,7 +119,7 @@ function PlaceholderCanvas({ variant }: { variant: ProjectPreviewVariant }) {
                 key={item}
               >
                 <span
-                  className={`block h-2/3 rounded-[4px] ${index % 2 === 0 ? "bg-[#aebeff]/24" : "bg-[#f2b85c]/22"}`}
+                  className={`block h-2/3 rounded-sm ${index % 2 === 0 ? "bg-[#aebeff]/24" : "bg-[#f2b85c]/22"}`}
                 />
                 <span className="mt-2 block h-1 w-3/4 rounded-full bg-white/20" />
               </span>
@@ -129,7 +129,7 @@ function PlaceholderCanvas({ variant }: { variant: ProjectPreviewVariant }) {
 
         {variant === "detail" && (
           <div className="grid min-h-0 flex-1 grid-cols-[1fr_34%] gap-2 p-2">
-            <span className="rounded-[8px] bg-[linear-gradient(145deg,rgba(174,190,255,0.36),rgba(88,116,216,0.08))]" />
+            <span className="rounded-lg bg-[linear-gradient(145deg,rgba(174,190,255,0.36),rgba(88,116,216,0.08))]" />
             <div className={`${shell} flex flex-col p-3`}>
               <span className="h-1.5 w-2/5 rounded-full bg-[#f2b85c]/60" />
               <span className="mt-3 h-2 w-full rounded-full bg-white/30" />
@@ -176,7 +176,7 @@ export function ProjectGallery({
 
   return (
     <div>
-      <div className="group/gallery relative aspect-[5/3] overflow-hidden rounded-[18px] border border-[rgba(25,44,62,0.12)] bg-[#20282c] max-[420px]:rounded-[14px] dark:border-white/10">
+      <div className="group/gallery relative aspect-5/3 overflow-hidden rounded-[18px] border border-[rgba(25,44,62,0.12)] bg-[#20282c] max-[420px]:rounded-[14px] dark:border-white/10">
         {activePreview.kind === "image" ? (
           <img
             className="absolute inset-0 size-full object-contain"
@@ -247,19 +247,19 @@ export function ProjectGallery({
                 }}
                 className={`group/thumb overflow-hidden rounded-[10px] border p-1 text-left transition-[border-color,background-color,transform] duration-300 hover:-translate-y-px max-[420px]:p-0.5 ${
                   previews.length > 4
-                    ? "w-[112px] shrink-0 snap-start max-[520px]:w-[92px]"
+                    ? "w-28 shrink-0 snap-start max-[520px]:w-23"
                     : ""
                 } ${
                   isActive
-                    ? "border-[#5874d8]/60 bg-[#5874d8]/[0.08] dark:border-[#aebeff]/55 dark:bg-[#aebeff]/[0.07]"
-                    : "border-[rgba(25,44,62,0.1)] bg-white/30 dark:border-white/[0.08] dark:bg-white/[0.025]"
+                    ? "border-[#5874d8]/60 bg-[#5874d8]/8 dark:border-[#aebeff]/55 dark:bg-[#aebeff]/[0.07]"
+                    : "border-[rgba(25,44,62,0.1)] bg-white/30 dark:border-white/8 dark:bg-white/2.5"
                 }`}
                 onClick={() => selectPreview(index)}
                 aria-label={`${projectTitle}: ${label}`}
                 aria-pressed={isActive}
                 key={label}
               >
-                <span className="relative block h-12 overflow-hidden rounded-[6px] bg-[#20282c] max-[520px]:h-10">
+                <span className="relative block h-12 overflow-hidden rounded-md bg-[#20282c] max-[520px]:h-10">
                   {preview.kind === "image" ? (
                     <img
                       className="absolute inset-0 size-full object-contain"

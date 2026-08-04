@@ -43,23 +43,23 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      className="relative flex min-h-[calc(100dvh-34px)] scroll-mt-0 flex-col justify-center overflow-hidden border-b border-[rgba(25,44,62,0.12)] px-[clamp(38px,5vw,72px)] py-[72px] max-[900px]:min-h-[620px] max-[620px]:min-h-0 max-[620px]:px-[25px] max-[620px]:py-[52px] max-[420px]:px-4 dark:border-white/[0.11]"
+      className="relative flex min-h-[calc(100dvh-34px)] scroll-mt-0 flex-col justify-center overflow-hidden border-b border-[rgba(25,44,62,0.12)] px-[clamp(38px,5vw,72px)] py-18 max-[900px]:min-h-155 max-[620px]:min-h-0 max-[620px]:px-6.25 max-[620px]:py-13 max-[420px]:px-4 dark:border-white/11"
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.38] [background-image:linear-gradient(rgba(88,116,216,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(88,116,216,0.08)_1px,transparent_1px)] [background-size:34px_34px] [mask-image:linear-gradient(to_bottom,black,transparent_88%)] dark:opacity-[0.2]"
+        className="pointer-events-none absolute inset-0 opacity-[0.38] bg-[linear-gradient(rgba(88,116,216,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(88,116,216,0.08)_1px,transparent_1px)] bg-size-[34px_34px] mask-[linear-gradient(to_bottom,black,transparent_88%)] dark:opacity-[0.2]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-[12%] right-[-125px] h-[310px] w-[360px] rotate-[-7deg] rounded-[38px] border border-[#5874d8]/10 before:absolute before:inset-[44px] before:rounded-[28px] before:border before:border-[#5874d8]/10 after:absolute after:top-[116px] after:right-[72px] after:left-[72px] after:h-[74px] after:rounded-[18px] after:border after:border-[#d28a22]/20 dark:border-[#aebeff]/10 dark:before:border-[#aebeff]/10"
+        className="pointer-events-none absolute top-[12%] -right-31.25 h-77.5 w-90 rotate-[-7deg] rounded-[38px] border border-[#5874d8]/10 before:absolute before:inset-11 before:rounded-[28px] before:border before:border-[#5874d8]/10 after:absolute after:top-29 after:right-18 after:left-18 after:h-18.5 after:rounded-[18px] after:border after:border-[#d28a22]/20 dark:border-[#aebeff]/10 dark:before:border-[#aebeff]/10"
       />
 
-      <div className="relative z-[1]">
+      <div className="relative z-1">
         <div className="mb-10 flex items-center gap-3 max-[620px]:mb-8">
           <span className="font-mono text-[10px] font-bold tracking-[0.14em] text-[#5874d8] dark:text-[#aebeff]">
             01 / ABOUT
           </span>
-          <span className="h-px flex-1 bg-[rgba(25,44,62,0.13)] dark:bg-white/[0.11]" />
+          <span className="h-px flex-1 bg-[rgba(25,44,62,0.13)] dark:bg-white/11" />
           <span className="font-mono text-[9px] tracking-[0.12em] text-[rgba(25,44,62,0.38)] uppercase dark:text-white/35">
             {localize(TEXT.about.process, language)}
           </span>
@@ -67,14 +67,14 @@ export function AboutSection() {
 
         <div className="grid grid-cols-[minmax(0,1.4fr)_minmax(215px,0.6fr)] gap-[clamp(28px,4vw,52px)] max-[720px]:grid-cols-1 max-[720px]:gap-10">
           <div className="flex flex-col items-start">
-            <h1 className="max-w-[690px] text-[clamp(38px,3.85vw,50px)] leading-[1] font-bold tracking-[-0.055em] max-[620px]:text-[36px] max-[420px]:text-[33px]">
+            <h1 className="max-w-172.5 text-[clamp(38px,3.85vw,50px)] leading-none font-bold tracking-[-0.055em] max-[620px]:text-[36px] max-[420px]:text-[33px]">
               {localize(TEXT.about.headlineStart, language)}{" "}
               <span className="text-[#5874d8] dark:text-[#aebeff]">
                 {localize(TEXT.about.headlineEmphasis, language)}
               </span>
             </h1>
 
-            <p className="mt-7 max-w-[610px] border-l-2 border-[#d28a22]/65 pl-5 text-[16px] leading-[1.75] text-[rgba(25,44,62,0.66)] max-[620px]:text-[15px] max-[420px]:mt-6 max-[420px]:pl-4 max-[420px]:text-[14px] dark:text-[rgba(237,241,239,0.62)]">
+            <p className="mt-7 max-w-152.5 border-l-2 border-[#d28a22]/65 pl-5 text-[16px] leading-[1.75] text-[rgba(25,44,62,0.66)] max-[620px]:text-[15px] max-[420px]:mt-6 max-[420px]:pl-4 max-[420px]:text-[14px] dark:text-[rgba(237,241,239,0.62)]">
               {localize(TEXT.about.summary, language)}
             </p>
 
@@ -89,10 +89,10 @@ export function AboutSection() {
           </div>
 
           <aside
-            className="w-full self-center overflow-hidden rounded-[24px] border border-[rgba(25,44,62,0.12)] bg-[rgba(255,255,255,0.48)] shadow-[0_18px_48px_rgba(25,44,62,0.06)] backdrop-blur-[10px] dark:border-white/[0.1] dark:bg-white/[0.035] dark:shadow-[0_18px_48px_rgba(0,0,0,0.16)]"
+            className="w-full self-center overflow-hidden rounded-3xl border border-[rgba(25,44,62,0.12)] bg-[rgba(255,255,255,0.48)] shadow-[0_18px_48px_rgba(25,44,62,0.06)] backdrop-blur-[10px] dark:border-white/10 dark:bg-white/[0.035] dark:shadow-[0_18px_48px_rgba(0,0,0,0.16)]"
             aria-label={localize(TEXT.about.profileIndex, language)}
           >
-            <div className="flex items-center justify-between border-b border-[rgba(25,44,62,0.1)] px-5 py-4 dark:border-white/[0.09]">
+            <div className="flex items-center justify-between border-b border-[rgba(25,44,62,0.1)] px-5 py-4 dark:border-white/9">
               <span className="font-mono text-[9px] font-bold tracking-[0.14em] text-[rgba(25,44,62,0.46)] uppercase dark:text-white/40">
                 {localize(TEXT.about.profileIndex, language)}
               </span>
@@ -102,9 +102,9 @@ export function AboutSection() {
             {profileData.map(({ icon: Icon, label, value, accent }, index) => (
               <div
                 key={label}
-                className={`px-5 py-[18px] ${
+                className={`px-5 py-4.5 ${
                   index < profileData.length - 1
-                    ? "border-b border-[rgba(25,44,62,0.1)] dark:border-white/[0.09]"
+                    ? "border-b border-[rgba(25,44,62,0.1)] dark:border-white/9"
                     : ""
                 }`}
               >

@@ -89,7 +89,7 @@ export function ContactMap({
 
     const markerElement = document.createElement("div");
     markerElement.className =
-      "relative grid size-[54px] cursor-pointer place-items-center";
+      "relative grid size-13.5 cursor-pointer place-items-center";
     const radarRings = Array.from({ length: 3 }, (_, index) => {
       const ring = document.createElement("span");
       const delayClass =
@@ -98,12 +98,12 @@ export function ContactMap({
           : index === 2
             ? "[animation-delay:-1.6s]"
             : "";
-      ring.className = `pointer-events-none absolute inset-[11px] rounded-full border-[2.5px] border-[rgba(245,158,11,0.92)] shadow-[0_0_14px_rgba(245,158,11,0.42)] [animation:map-marker-radar_2.4s_cubic-bezier(0.16,1,0.3,1)_infinite] ${delayClass}`;
+      ring.className = `pointer-events-none absolute inset-2.75 rounded-full border-[2.5px] border-[rgba(245,158,11,0.92)] shadow-[0_0_14px_rgba(245,158,11,0.42)] animate-[map-marker-radar_2.4s_cubic-bezier(0.16,1,0.3,1)_infinite] ${delayClass}`;
       return ring;
     });
     const markerCore = document.createElement("div");
     markerCore.className =
-      "z-[1] grid size-8 place-items-center rounded-full border-[2.5px] border-white bg-[linear-gradient(145deg,#6685e4,#3f5fc4)] shadow-[0_8px_22px_rgba(23,38,72,0.42),0_0_0_5px_rgba(79,111,206,0.2)]";
+      "z-1 grid size-8 place-items-center rounded-full border-[2.5px] border-white bg-[linear-gradient(145deg,#6685e4,#3f5fc4)] shadow-[0_8px_22px_rgba(23,38,72,0.42),0_0_0_5px_rgba(79,111,206,0.2)]";
 
     const pinIcon = document.createElementNS(
       "http://www.w3.org/2000/svg",
@@ -113,7 +113,7 @@ export function ContactMap({
     pinIcon.setAttribute("aria-hidden", "true");
     pinIcon.setAttribute(
       "class",
-      "block size-[15px] -translate-y-px fill-none stroke-white [stroke-linecap:round] [stroke-linejoin:round] [stroke-width:2]",
+      "block size-3.75 -translate-y-px fill-none stroke-white [stroke-linecap:round] [stroke-linejoin:round] stroke-2",
     );
 
     const pinPath = document.createElementNS(
@@ -212,7 +212,7 @@ export function ContactMap({
             +
           </button>
           <output
-            className="grid h-[22px] w-full place-items-center border-y border-[rgba(25,44,62,0.12)] font-mono text-[9px] font-bold tabular-nums"
+            className="grid h-5.5 w-full place-items-center border-y border-[rgba(25,44,62,0.12)] font-mono text-[9px] font-bold tabular-nums"
             aria-label={`Current zoom ${Math.round(zoomLevel)}`}
           >
             {Math.round(zoomLevel)}

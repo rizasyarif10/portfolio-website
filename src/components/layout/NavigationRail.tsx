@@ -38,7 +38,7 @@ export function NavigationRail() {
     >
       <a
         href="#about"
-        className="grid h-[86px] w-full shrink-0 place-items-center border-b border-white/10 text-xl font-extrabold tracking-[-0.06em] transition-colors hover:bg-white/[0.06]"
+        className="grid h-21.5 w-full shrink-0 place-items-center border-b border-white/10 text-xl font-extrabold tracking-[-0.06em] transition-colors hover:bg-white/6"
         aria-label="Go to about section"
         onClick={(event) => {
           setActiveHref("#about");
@@ -47,7 +47,7 @@ export function NavigationRail() {
       >
         MR
       </a>
-      <nav className="flex w-full flex-1 flex-col justify-center gap-[3px] p-2.5">
+      <nav className="flex w-full flex-1 flex-col justify-center gap-0.75 p-2.5">
         {NAVIGATION.map((item) => {
           const label = localize(item.label, language);
           const isActive = activeHref === item.href;
@@ -61,10 +61,10 @@ export function NavigationRail() {
                 setActiveHref(item.href);
                 navigateToSection(event, item.href);
               }}
-              className={`group relative flex min-h-[67px] w-full flex-col items-center justify-center gap-1 rounded-[14px] transition duration-200 [&>svg]:transition [&>svg]:duration-200 hover:[&>svg]:-translate-y-px ${
+              className={`group relative flex min-h-16.75 w-full flex-col items-center justify-center gap-1 rounded-[14px] transition duration-200 [&>svg]:transition [&>svg]:duration-200 hover:[&>svg]:-translate-y-px ${
                 isActive
                   ? "bg-[rgba(79,111,206,0.24)] text-white [&>svg]:text-[#aebeff]"
-                  : "text-white/50 hover:bg-white/[0.09] hover:text-white [&>svg]:text-[#91a8b3] hover:[&>svg]:text-white"
+                  : "text-white/50 hover:bg-white/9 hover:text-white [&>svg]:text-[#91a8b3] hover:[&>svg]:text-white"
               }`}
             >
               <NavigationIcon name={item.icon} size={17} />
@@ -74,7 +74,7 @@ export function NavigationRail() {
               {isActive && (
                 <span
                   aria-hidden="true"
-                  className="absolute right-0 h-5 w-[3px] rounded-l-full bg-[#f59e0b]"
+                  className="absolute right-0 h-5 w-0.75 rounded-l-full bg-[#f59e0b]"
                 />
               )}
             </a>

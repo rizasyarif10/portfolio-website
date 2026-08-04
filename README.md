@@ -1,65 +1,126 @@
-# Mochamad Riza Syarif — Portfolio
+<div align="center">
+  <img src="./public/favicon.svg" width="76" alt="MR portfolio logo" />
 
-A modern, responsive portfolio based on the 2026 CV of Mochamad Riza Syarif.
+  <h1>Mochamad Riza Syarif — Portfolio</h1>
 
-## Stack
+  <p>
+    A personal portfolio highlighting professional experience, technical
+    expertise, and selected projects.
+  </p>
 
-- React 19
-- Vite 8
-- TypeScript
-- Tailwind CSS 4
-- MapLibre GL
+  <p>
+    <a href="https://rizasyarif.web.id/">
+      <img src="https://img.shields.io/badge/Visit_Portfolio-2563EB?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Visit portfolio" />
+    </a>
+    <a href="https://www.linkedin.com/in/mochamad-riza-syarif/">
+      <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn profile" />
+    </a>
+  </p>
+</div>
 
-## Run locally
+---
+
+## Overview
+
+This portfolio presents my professional background, technical capabilities,
+and selected work through a focused, responsive interface. It is designed to
+provide recruiters, collaborators, and clients with a clear overview of my
+experience and contributions.
+
+## Highlights
+
+- Responsive layouts for mobile, tablet, and desktop
+- English and Indonesian language support
+- Light and dark themes with persistent preferences
+- Professional and independent project galleries
+- Interactive MapLibre contact map with selectable base layers
+- In-browser CV preview with standard and ATS-ready downloads
+- Optimized profile and project imagery
+- Component-based architecture with centralized portfolio data
+
+## Tech Stack
+
+<p>
+  <img src="https://img.shields.io/badge/React-19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React 19" />
+  <img src="https://img.shields.io/badge/Vite-8-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite 8" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS 4" />
+  <img src="https://img.shields.io/badge/MapLibre_GL-396CB2?style=for-the-badge&logo=maplibre&logoColor=white" alt="MapLibre GL" />
+</p>
+
+## Project Structure
+
+```text
+portfolio-website/
+├── api/                    # Vercel serverless functions
+├── public/
+│   ├── projects/           # Optimized project previews
+│   ├── favicon.svg
+│   └── profile-photo-*     # Responsive profile images
+├── src/
+│   ├── components/
+│   │   ├── layout/         # Navigation and profile layout
+│   │   ├── maps/           # MapLibre contact map
+│   │   ├── projects/       # Project carousel and gallery
+│   │   ├── sections/       # Main portfolio sections
+│   │   └── ui/             # Reusable interface components
+│   ├── constants/          # Centralized portfolio content
+│   ├── contexts/           # Language state
+│   ├── hooks/              # Reusable React hooks
+│   ├── types/              # TypeScript definitions
+│   └── utils/              # Localization and navigation helpers
+├── vercel.json
+└── vite.config.ts
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 22 or later
+- npm
+
+### Installation
 
 ```bash
+git clone https://github.com/rizasyarif10/portfolio-website.git
+cd portfolio-website
 npm install
 npm run dev
 ```
 
-Create a production build with:
+The development server is available at the URL printed by Vite, usually
+`http://localhost:5173`.
+
+## Available Scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the Vite development server |
+| `npm run build` | Type-check the application and create a production build |
+| `npm run preview` | Preview the production build locally |
+
+## Production Build
 
 ```bash
 npm run build
+npm run preview
 ```
 
-## Profile visitor counter
+The generated production files are written to `dist/`.
 
-The public profile counter uses a Vercel Function and Upstash Redis. A browser
-is counted once within a rolling 24-hour period; common crawler user agents are
-not counted.
+## Deployment
 
-1. Open the Vercel project and add the Upstash Redis integration from
-   **Storage**.
-2. Create the free database with **AWS Singapore (`ap-southeast-1`)** as its
-   primary region, then connect it to this project. Vercel will provide
-   either `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN`, or
-   `KV_REST_API_URL` and `KV_REST_API_TOKEN`, automatically. Both naming
-   formats are supported.
-3. Redeploy the project after the environment variables are available.
+The website is deployed on Vercel and connected to the GitHub repository.
+Updates pushed to the production branch are built and deployed automatically.
 
-The repository configures Vercel Functions to run in Singapore (`sin1`) through
-`vercel.json`, keeping the function close to the Redis primary region.
+## Map Data
 
-For local function testing, copy `.env.example` to `.env.local`, provide the
-Upstash credentials, and run the project with `npx vercel dev`. The regular
-`npm run dev` command serves only the Vite frontend, so the counter stays hidden
-while its API is unavailable.
+The contact map uses MapLibre GL with OpenStreetMap, CARTO Light, and Esri World
+Imagery sources. An internet connection is required to load the map tiles.
 
-## Tailwind CSS
+---
 
-This project uses Tailwind CSS v4 through the official PostCSS integration:
-
-- `postcss.config.mjs` registers `@tailwindcss/postcss`.
-- React components are styled with Tailwind utility classes.
-- `src/index.css` only contains global base styles, animation keyframes, and
-  MapLibre's third-party selectors.
-- The custom `dark:` variant follows the application's `data-theme="dark"`
-  switch.
-- Tailwind scans the React and TypeScript source files automatically.
-
-Tailwind v4 detects utility classes automatically, so a separate
-`tailwind.config.js` file is not required.
-
-The contact map uses OpenStreetMap, CARTO Light, and Esri World Imagery raster
-tiles through MapLibre GL and needs an internet connection to display map tiles.
+<div align="center">
+  <sub>Designed and developed by Mochamad Riza Syarif.</sub>
+</div>

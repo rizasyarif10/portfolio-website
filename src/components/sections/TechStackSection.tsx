@@ -1,4 +1,13 @@
-import { Bot, Check } from "lucide-react";
+import {
+  Activity,
+  BadgeCheck,
+  Bot,
+  Check,
+  Code2,
+  Database,
+  Map,
+  PanelsTopLeft,
+} from "lucide-react";
 import { SKILL_GROUPS, TEXT } from "../../constants/portfolio";
 import { useLanguage } from "../../contexts/LanguageContext";
 import { localize } from "../../utils/localize";
@@ -6,6 +15,14 @@ import { SectionTitle } from "../ui/SectionTitle";
 
 export function TechStackSection() {
   const { language } = useLanguage();
+  const groupIcons = [
+    Code2,
+    PanelsTopLeft,
+    Map,
+    Database,
+    BadgeCheck,
+    Activity,
+  ] as const;
 
   return (
     <section
@@ -20,6 +37,7 @@ export function TechStackSection() {
       <div className="grid grid-cols-2 gap-3 max-[720px]:grid-cols-1">
         {SKILL_GROUPS.map((group, index) => {
           const label = localize(group.label, language);
+          const GroupIcon = groupIcons[index];
 
           return (
             <article
@@ -27,9 +45,14 @@ export function TechStackSection() {
               className="rounded-[22px] border border-[rgba(25,44,62,0.11)] bg-white/40 p-5 transition-[transform,border-color,background-color,box-shadow] duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform hover:-translate-y-0.5 hover:border-[#5874d8]/25 hover:bg-white/65 hover:shadow-[0_16px_36px_rgba(25,44,62,0.07)] motion-reduce:transform-none motion-reduce:transition-none max-[420px]:rounded-[18px] max-[420px]:p-4 dark:border-white/10 dark:bg-white/[0.035] dark:hover:border-[#aebeff]/25 dark:hover:bg-white/[0.055] dark:hover:shadow-[0_16px_36px_rgba(0,0,0,0.14)]"
             >
               <div className="mb-5 flex items-center justify-between border-b border-[rgba(25,44,62,0.09)] pb-4 dark:border-white/[0.08]">
-                <h3 className="text-sm font-bold tracking-[-0.015em]">
-                  {label}
-                </h3>
+                <div className="flex items-center gap-2.5">
+                  <span className="grid size-8 place-items-center rounded-[10px] bg-[#5874d8]/10 text-[#5874d8] dark:bg-[#aebeff]/10 dark:text-[#aebeff]">
+                    <GroupIcon size={15} strokeWidth={1.8} />
+                  </span>
+                  <h3 className="text-sm font-bold tracking-[-0.015em]">
+                    {label}
+                  </h3>
+                </div>
                 <span className="font-mono text-[9px] font-bold text-[#5874d8] dark:text-[#aebeff]">
                   0{index + 1}
                 </span>

@@ -8,11 +8,21 @@ import { localize } from "../../utils/localize";
 type PdfPreviewModalProps = {
   fileUrl: string;
   fileName: string;
+  secondaryDownload?: {
+    url: string;
+    label: string;
+  };
   isOpen: boolean;
   onClose: () => void;
 };
 
-export function PdfPreviewModal({ fileUrl, fileName, isOpen, onClose }: PdfPreviewModalProps) {
+export function PdfPreviewModal({
+  fileUrl,
+  fileName,
+  secondaryDownload,
+  isOpen,
+  onClose,
+}: PdfPreviewModalProps) {
   const { language } = useLanguage();
 
   useEffect(() => {
@@ -53,9 +63,18 @@ export function PdfPreviewModal({ fileUrl, fileName, isOpen, onClose }: PdfPrevi
         <div className="min-h-0 bg-[#d8d6ce] p-2.5 dark:bg-[#06101d]">
           <iframe className="block h-full w-full rounded-xl border-0 bg-white" src={`${fileUrl}#toolbar=1&navpanes=0&view=FitH`} title={`${fileName} preview`} />
         </div>
-        <footer className="flex items-center justify-between gap-2.5 border-t border-[rgba(25,44,62,0.12)] bg-[#f7f5ee] px-[18px] py-[15px] max-[620px]:px-3 max-[620px]:py-[11px] dark:border-[#8fb7ff]/15 dark:bg-[#0b1726]">
-          <button className="inline-flex min-h-10 cursor-pointer items-center justify-center gap-2 rounded-[11px] border border-[rgba(25,44,62,0.14)] bg-transparent px-[17px] text-[11px] font-bold text-[#282c2f] max-[620px]:px-[13px] dark:border-white/10 dark:text-[#edf1ef]" type="button" onClick={onClose}>{localize(TEXT.pdf.close, language)}</button>
-          <a className="ml-auto inline-flex min-h-10 cursor-pointer items-center justify-center gap-2 rounded-[11px] bg-[#657780] px-[17px] text-[11px] font-bold text-white max-[620px]:px-[13px] dark:bg-[#71838b]" href={fileUrl} download>{localize(TEXT.pdf.download, language)} <Download size={16} /></a>
+        <footer className="flex items-center justify-between gap-2.5 border-t border-[rgba(25,44,62,0.12)] bg-[#f7f5ee] px-[18px] py-[15px] max-[620px]:px-3 max-[620px]:py-[11px] max-[420px]:gap-1.5 dark:border-[#8fb7ff]/15 dark:bg-[#0b1726]">
+          <button className="inline-flex min-h-10 cursor-pointer items-center justify-center gap-2 rounded-[11px] border border-[rgba(25,44,62,0.14)] bg-transparent px-[17px] text-[11px] font-bold text-[#282c2f] max-[620px]:px-[13px] max-[420px]:px-2 max-[420px]:text-[10px] dark:border-white/10 dark:text-[#edf1ef]" type="button" onClick={onClose}>{localize(TEXT.pdf.close, language)}</button>
+          {secondaryDownload && (
+            <a
+              className="ml-auto inline-flex min-h-10 cursor-pointer items-center justify-center gap-2 rounded-[11px] border border-[rgba(25,44,62,0.14)] bg-transparent px-[17px] text-[11px] font-bold text-[#282c2f] max-[620px]:px-[13px] max-[420px]:px-2 max-[420px]:text-[10px] dark:border-white/10 dark:text-[#edf1ef]"
+              href={secondaryDownload.url}
+              download
+            >
+              {secondaryDownload.label} <Download size={15} />
+            </a>
+          )}
+          <a className={`${secondaryDownload ? "" : "ml-auto"} inline-flex min-h-10 cursor-pointer items-center justify-center gap-2 rounded-[11px] bg-[#657780] px-[17px] text-[11px] font-bold text-white max-[620px]:px-[13px] max-[420px]:px-2 max-[420px]:text-[10px] dark:bg-[#71838b]`} href={fileUrl} download>{localize(TEXT.pdf.download, language)} <Download size={16} /></a>
         </footer>
       </div>
     </div>,

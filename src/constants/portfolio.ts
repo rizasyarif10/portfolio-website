@@ -57,7 +57,12 @@ export const PROFILE: Profile = {
   location: localized("South Tangerang", "Tangerang Selatan"),
   timezone: "UTC+7",
   photo: "/profile-photo.jpeg",
-  cv: "/cv-mochamad-riza-syarif-2026.pdf",
+  photoWebpSrcSet:
+    "/profile-photo-480.webp 480w, /profile-photo-800.webp 800w, /profile-photo-1066.webp 1066w",
+  photoSizes:
+    "(max-width: 620px) calc(100vw - 16px), (max-width: 900px) 42vw, 360px",
+  cv: "/Mochamad-Riza-Syarif-CV.pdf",
+  atsCv: "/Mochamad-Riza-Syarif-CV-ATS.pdf",
   linkedIn: "https://www.linkedin.com/in/mochamad-riza",
   github: "https://github.com/rizasyarif10",
 };
@@ -147,17 +152,17 @@ export const PROFESSIONAL_PROJECTS: readonly Project[] = [
       {
         kind: "image",
         label: localized("Analysis setup", "Pengaturan analisis"),
-        image: "/projects/lokasi-intelligence/analysis-setup.webp",
+        image: "/projects/lokasi-intelligence/analysis-setup-sanitized.webp",
       },
       {
         kind: "image",
         label: localized("Analysis summary", "Ringkasan analisis"),
-        image: "/projects/lokasi-intelligence/analysis-summary.webp",
+        image: "/projects/lokasi-intelligence/analysis-summary-sanitized.webp",
       },
       {
         kind: "image",
         label: localized("Analysis result", "Hasil analisis"),
-        image: "/projects/lokasi-intelligence/analysis-result.webp",
+        image: "/projects/lokasi-intelligence/analysis-result-sanitized.webp",
       },
     ],
   },
@@ -187,17 +192,17 @@ export const PROFESSIONAL_PROJECTS: readonly Project[] = [
       {
         kind: "image",
         label: localized("Dashboard", "Dashboard"),
-        image: "/projects/lokasi-targetin/dashboard.webp",
+        image: "/projects/lokasi-targetin/dashboard-sanitized.webp",
       },
       {
         kind: "image",
         label: localized("Master data", "Master data"),
-        image: "/projects/lokasi-targetin/master-data.webp",
+        image: "/projects/lokasi-targetin/master-data-sanitized.webp",
       },
       {
         kind: "image",
         label: localized("Data detail", "Detail data"),
-        image: "/projects/lokasi-targetin/data-detail.webp",
+        image: "/projects/lokasi-targetin/data-detail-sanitized.webp",
       },
     ],
   },
@@ -222,7 +227,7 @@ export const PROFESSIONAL_PROJECTS: readonly Project[] = [
       {
         kind: "image",
         label: localized("Login", "Login"),
-        image: "/projects/lokasi-datamark/login.webp",
+        image: "/projects/lokasi-datamark/login-sanitized.webp",
       },
       {
         kind: "image",
@@ -232,12 +237,12 @@ export const PROFESSIONAL_PROJECTS: readonly Project[] = [
       {
         kind: "image",
         label: localized("POI labeling", "Pelabelan POI"),
-        image: "/projects/lokasi-datamark/poi-labeling.webp",
+        image: "/projects/lokasi-datamark/poi-labeling-sanitized.webp",
       },
       {
         kind: "image",
         label: localized("Object labeling", "Pelabelan objek"),
-        image: "/projects/lokasi-datamark/object-labeling.webp",
+        image: "/projects/lokasi-datamark/object-labeling-sanitized.webp",
       },
     ],
   },
@@ -264,22 +269,22 @@ export const PROFESSIONAL_PROJECTS: readonly Project[] = [
       {
         kind: "image",
         label: localized("Login", "Login"),
-        image: "/projects/celia/login.webp",
+        image: "/projects/celia/login-sanitized.webp",
       },
       {
         kind: "image",
         label: localized("Dashboard", "Dashboard"),
-        image: "/projects/celia/dashboard.webp",
+        image: "/projects/celia/dashboard-sanitized.webp",
       },
       {
         kind: "image",
         label: localized("Data explorer", "Data explorer"),
-        image: "/projects/celia/data-explorer.webp",
+        image: "/projects/celia/data-explorer-sanitized.webp",
       },
       {
         kind: "image",
         label: localized("Analysis results", "Hasil analisis"),
-        image: "/projects/celia/analysis-results.webp",
+        image: "/projects/celia/analysis-results-sanitized.webp",
       },
     ],
   },
@@ -311,42 +316,42 @@ export const PROFESSIONAL_PROJECTS: readonly Project[] = [
       {
         kind: "image",
         label: localized("Home", "Beranda"),
-        image: "/projects/lokasi-fif/home.webp",
+        image: "/projects/lokasi-fif/home-sanitized.webp",
       },
       {
         kind: "image",
         label: localized("Select business area", "Pilih area bisnis"),
-        image: "/projects/lokasi-fif/select-business-area.webp",
+        image: "/projects/lokasi-fif/select-business-area-sanitized.webp",
       },
       {
         kind: "image",
         label: localized("Load business area", "Muat area bisnis"),
-        image: "/projects/lokasi-fif/load-business-area.webp",
+        image: "/projects/lokasi-fif/load-business-area-sanitized.webp",
       },
       {
         kind: "image",
         label: localized("POI parameters", "Parameter POI"),
-        image: "/projects/lokasi-fif/poi-parameters.webp",
+        image: "/projects/lokasi-fif/poi-parameters-sanitized.webp",
       },
       {
         kind: "image",
         label: localized("Parameter setup", "Pengaturan parameter"),
-        image: "/projects/lokasi-fif/parameter-setup.webp",
+        image: "/projects/lokasi-fif/parameter-setup-sanitized.webp",
       },
       {
         kind: "image",
         label: localized("Additional parameters", "Parameter tambahan"),
-        image: "/projects/lokasi-fif/additional-parameters.webp",
+        image: "/projects/lokasi-fif/additional-parameters-sanitized.webp",
       },
       {
         kind: "image",
         label: localized("Results map", "Peta hasil"),
-        image: "/projects/lokasi-fif/results-map.webp",
+        image: "/projects/lokasi-fif/results-map-sanitized.webp",
       },
       {
         kind: "image",
         label: localized("Dashboard report", "Laporan dashboard"),
-        image: "/projects/lokasi-fif/dashboard-report.webp",
+        image: "/projects/lokasi-fif/dashboard-report-sanitized.webp",
       },
     ],
   },
@@ -381,12 +386,12 @@ export const PROFESSIONAL_PROJECTS: readonly Project[] = [
       {
         kind: "image",
         label: localized("Home", "Beranda"),
-        image: "/projects/lokasi-hso/home.webp",
+        image: "/projects/lokasi-hso/home-sanitized.webp",
       },
       {
         kind: "image",
         label: localized("Analysis result", "Hasil analisis"),
-        image: "/projects/lokasi-hso/analysis-result.webp",
+        image: "/projects/lokasi-hso/analysis-result-sanitized.webp",
       },
     ],
   },
@@ -409,7 +414,6 @@ export const INDEPENDENT_PROJECTS: readonly Project[] = [
         image: "/projects/pinternakan/login.webp",
       },
     ],
-    href: "https://github.com/Pinternakan/fe-colossal-home",
   },
   {
     title: "Integra Design Consultant",
@@ -437,7 +441,6 @@ export const INDEPENDENT_PROJECTS: readonly Project[] = [
         image: "/projects/integra/news.webp",
       },
     ],
-    href: "https://integradesignconsultant.com/projects",
   },
 ];
 
@@ -558,50 +561,73 @@ export const EDUCATION: Education = {
 
 export const SKILL_GROUPS: readonly SkillGroup[] = [
   {
-    label: localized("Frontend", "Frontend"),
+    label: localized("Frontend Development", "Pengembangan Frontend"),
     items: [
       "JavaScript",
       "TypeScript",
-      "React",
+      "React.js",
       "Next.js",
       "Vite",
+      "jQuery",
+      "EJS",
       "HTML5",
       "CSS3",
-      "SCSS",
     ],
   },
   {
-    label: localized("State & UI", "State & UI"),
+    label: localized("State Management & UI", "Manajemen State & UI"),
     items: [
       "Redux Toolkit",
+      "Redux Persist",
       "Zustand",
       "TanStack Query",
       "Tailwind CSS",
+      "Bootstrap",
       "Material UI",
       "Ant Design",
       "Radix UI",
     ],
   },
   {
-    label: localized("Maps & Data", "Peta & Data"),
+    label: localized("Maps & Geospatial", "Peta & Geospasial"),
     items: [
       "MapLibre GL",
-      "Leaflet",
+      "Leaflet.js",
       "GeoJSON",
-      "Data Visualization",
-      "REST API",
+      "H3.js",
     ],
   },
   {
-    label: localized("Quality & Tools", "Kualitas & Tools"),
+    label: localized("Backend & Database", "Backend & Database"),
+    items: [
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "PostgreSQL",
+      "MySQL/MariaDB",
+      "Drizzle ORM",
+    ],
+  },
+  {
+    label: localized("Testing & Code Quality", "Testing & Kualitas Kode"),
     items: [
       "Jest",
       "Vitest",
+      "MSW",
       "ESLint",
+      "SonarQube",
+    ],
+  },
+  {
+    label: localized(
+      "Development & Monitoring Tools",
+      "Tools Pengembangan & Monitoring",
+    ),
+    items: [
       "Git",
+      "npm",
       "New Relic",
       "Datadog",
-      "Agile / Scrum",
     ],
   },
 ];
@@ -647,7 +673,7 @@ export const TEXT = {
     ),
   },
   services: {
-    title: localized("What I do", "Yang saya kerjakan"),
+    title: localized("How I Contribute", "Cara Saya Berkontribusi"),
     note: localized(
       "A focused mix of product thinking and frontend craft.",
       "Perpaduan fokus produk dan keahlian frontend.",
@@ -701,7 +727,7 @@ export const TEXT = {
     ],
   },
   contact: {
-    title: localized("Let’s talk", "Mari berdiskusi"),
+    title: localized("Get in Touch", "Hubungi Saya"),
     note: localized(
       "Open to frontend, product, and mapping collaborations.",
       "Terbuka untuk kolaborasi frontend, produk, dan pemetaan.",
@@ -719,6 +745,7 @@ export const TEXT = {
       "Tersedia untuk kerja remote & hybrid",
     ),
     layerSelector: localized("Map style", "Gaya peta"),
+    resetMap: localized("Reset to marker", "Kembali ke marker"),
     streetLayer: localized("Street", "Jalan"),
     lightLayer: localized("Light Gray", "Abu Terang"),
     satelliteLayer: localized("Satellite", "Satelit"),
@@ -730,6 +757,7 @@ export const TEXT = {
     preview: localized("Document preview", "Pratinjau dokumen"),
     close: localized("Close", "Tutup"),
     closePreview: localized("Close PDF preview", "Tutup pratinjau PDF"),
+    downloadAts: localized("ATS CV", "CV ATS"),
     download: localized("Download PDF", "Unduh PDF"),
   },
   theme: {

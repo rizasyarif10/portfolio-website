@@ -56,6 +56,9 @@ export function ContactSection() {
         "text-white bg-[linear-gradient(32deg,transparent_42%,rgba(209,194,151,0.72)_43%_49%,transparent_50%),linear-gradient(145deg,#446b55_0_38%,#36596c_39%_62%,#6e6c4d_63%)]",
     },
   ];
+  const activeLayerLabel =
+    mapLayers.find((layer) => layer.value === baseLayer)?.label ??
+    localize(TEXT.contact.lightLayer, language);
 
   useEffect(() => {
     if (!isLayerMenuOpen) return;
@@ -78,20 +81,69 @@ export function ContactSection() {
         title={localize(TEXT.contact.title, language)}
         note={localize(TEXT.contact.note, language)}
       />
-      <div className="overflow-hidden rounded-[24px] border border-[#7189df]/45 bg-[#252a2d] dark:border-[#8fb7ff]/30 dark:bg-[#0d2238]">
-        <header className="flex min-h-[74px] items-center justify-between gap-4 px-5 py-[14px] text-[#f2f4ef] max-[620px]:flex-col max-[620px]:items-start max-[620px]:gap-2 max-[620px]:px-4 max-[620px]:py-4 max-[420px]:px-3.5 max-[420px]:py-3.5">
-          <div className="relative pl-4 before:absolute before:top-0 before:bottom-0 before:left-0 before:w-[2px] before:rounded-full before:bg-[linear-gradient(to_bottom,#5874d8,#f2a541)]">
-            <strong className="block text-xs font-bold">
-              {localize(TEXT.contact.based, language)} {location}, Banten,
-              Indonesia
-            </strong>
-            <p className="mt-1 text-[10px] text-[rgba(242,244,239,0.58)]">{localize(TEXT.contact.remote, language)}</p>
+      <div className="grid min-h-[430px] grid-cols-[minmax(235px,0.72fr)_minmax(0,1.45fr)] overflow-hidden rounded-[28px] border border-[rgba(25,44,62,0.13)] bg-white/45 shadow-[0_22px_55px_rgba(25,44,62,0.08)] max-[760px]:grid-cols-1 max-[420px]:rounded-[22px] dark:border-[#8fb7ff]/15 dark:bg-white/[0.035] dark:shadow-[0_24px_60px_rgba(2,8,18,0.28)]">
+        <div className="relative flex min-h-0 flex-col overflow-hidden bg-[#192c3e] p-6 text-white max-[900px]:p-5 max-[760px]:order-2 max-[760px]:min-h-0 max-[420px]:p-4 dark:bg-[#071727]">
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute -top-24 -right-24 size-64 rounded-full border border-[#8fb7ff]/15 bg-[radial-gradient(circle,rgba(88,116,216,0.24),transparent_65%)]"
+          />
+
+          <div className="relative z-[1]">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-3 py-2 text-[8px] font-bold tracking-[0.12em] text-[#b8c9e8] uppercase">
+              <span className="size-1.5 rounded-full bg-[#57c86b] shadow-[0_0_0_3px_rgba(87,200,107,0.16)]" />
+              {localize(PROFILE.availability, language)}
+            </span>
+            <div className="mt-7 grid size-11 place-items-center rounded-[14px] border border-[#8fb7ff]/20 bg-[#8fb7ff]/10 text-[#b9d0ff]">
+              <MapPinned size={20} strokeWidth={1.8} />
+            </div>
+            <p className="mt-5 font-mono text-[8px] font-bold tracking-[0.13em] text-[#8fa6ba] uppercase">
+              {localize(TEXT.contact.based, language)}
+            </p>
+            <h3 className="mt-2 max-w-[250px] text-[25px] leading-[1.08] font-bold tracking-[-0.045em] max-[420px]:text-[22px]">
+              {location}, Banten
+            </h3>
+            <p className="mt-3 max-w-[285px] text-[11px] leading-[1.7] text-white/56">
+              {localize(TEXT.contact.remote, language)}
+            </p>
           </div>
-          <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.05] px-3 py-2 text-[9px] font-extrabold tracking-[0.08em] text-[#b7c3a8] uppercase">
-            <MapPinned size={15} /> MapLibre
-          </span>
-        </header>
-        <div className="relative h-[310px] overflow-hidden border-t border-white/10 max-[420px]:h-[280px]">
+
+          <div className="relative z-[1] mt-auto grid grid-cols-1 gap-2 pt-7 max-[760px]:grid-cols-2 max-[420px]:grid-cols-1">
+            <a
+              className="group grid grid-cols-[34px_1fr_16px] items-center gap-2.5 rounded-[15px] border border-white/10 bg-white/[0.055] p-3 transition-[border-color,background-color] duration-300 hover:border-[#8fb7ff]/35 hover:bg-white/[0.1]"
+              href={`mailto:${CONTACT.email}`}
+            >
+              <span className="grid size-[34px] place-items-center rounded-[10px] bg-[#8fb7ff]/12 text-[#b9d0ff]">
+                <Mail size={15} />
+              </span>
+              <span className="min-w-0 text-[8px] font-bold tracking-[0.1em] text-white/42 uppercase">
+                {localize(TEXT.contact.email, language)}
+                <strong className="mt-1 block overflow-hidden text-[10px] font-semibold tracking-normal text-ellipsis whitespace-nowrap text-white normal-case">
+                  {CONTACT.email}
+                </strong>
+              </span>
+              <ArrowUpRight size={14} className="text-white/45 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white" />
+            </a>
+            <a
+              className="group grid grid-cols-[34px_1fr_16px] items-center gap-2.5 rounded-[15px] border border-white/10 bg-white/[0.055] p-3 transition-[border-color,background-color] duration-300 hover:border-[#8fb7ff]/35 hover:bg-white/[0.1]"
+              href={CONTACT.whatsappHref}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span className="grid size-[34px] place-items-center rounded-[10px] bg-[#8fb7ff]/12 text-[#b9d0ff]">
+                <WhatsAppIcon size={15} />
+              </span>
+              <span className="min-w-0 text-[8px] font-bold tracking-[0.1em] text-white/42 uppercase">
+                {localize(TEXT.contact.phone, language)}
+                <strong className="mt-1 block overflow-hidden text-[10px] font-semibold tracking-normal text-ellipsis whitespace-nowrap text-white normal-case">
+                  {CONTACT.phoneDisplay}
+                </strong>
+              </span>
+              <ArrowUpRight size={14} className="text-white/45 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white" />
+            </a>
+          </div>
+        </div>
+
+        <div className="relative min-h-[430px] overflow-hidden max-[760px]:order-1 max-[760px]:min-h-[290px] max-[420px]:min-h-[260px]">
           <Suspense
             fallback={
               <div className="grid h-full place-items-center bg-[#dedbd2] text-xs font-semibold text-[rgba(25,44,62,0.5)] dark:bg-[#0c141c] dark:text-[rgba(237,241,239,0.5)]">
@@ -102,9 +154,23 @@ export function ContactSection() {
             <ContactMap
               locationLabel={location}
               availabilityText={localize(TEXT.contact.mapPopup, language)}
+              resetLabel={localize(TEXT.contact.resetMap, language)}
               baseLayer={baseLayer}
             />
           </Suspense>
+          <div className="pointer-events-none absolute top-3 left-3 z-[4] flex max-w-[calc(100%_-_70px)] items-center gap-2 rounded-[13px] border border-[rgba(25,44,62,0.12)] bg-white/90 px-3 py-2.5 text-[#192c3e] shadow-[0_8px_24px_rgba(25,44,62,0.14)] backdrop-blur-xl">
+            <span className="grid size-7 shrink-0 place-items-center rounded-[9px] bg-[#5874d8]/10 text-[#5874d8]">
+              <MapPinned size={14} />
+            </span>
+            <span className="min-w-0">
+              <strong className="block truncate text-[9px] font-bold">
+                {location} · Indonesia
+              </strong>
+              <small className="mt-0.5 block truncate text-[8px] font-semibold tracking-[0.08em] text-[rgba(25,44,62,0.46)] uppercase">
+                MapLibre · {activeLayerLabel}
+              </small>
+            </span>
+          </div>
           <div
             ref={layerControlRef}
             className="absolute right-3 bottom-3 z-[5] flex flex-row-reverse items-end gap-2 max-[620px]:right-2.5 max-[620px]:bottom-8 max-[620px]:max-w-[calc(100%_-_20px)]"
@@ -157,34 +223,7 @@ export function ContactSection() {
           </div>
         </div>
       </div>
-      <div className="mt-3 grid grid-cols-2 gap-3 max-[620px]:grid-cols-1">
-        <a className="group grid grid-cols-[38px_1fr_18px] items-center gap-3 rounded-[18px] border border-[rgba(25,44,62,0.11)] bg-white/45 p-4 transition-[transform,border-color,background-color,box-shadow] duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform hover:-translate-y-0.5 hover:border-[#5874d8]/30 hover:bg-white/75 hover:shadow-[0_14px_30px_rgba(25,44,62,0.07)] motion-reduce:transform-none motion-reduce:transition-none max-[420px]:p-3.5 dark:border-white/10 dark:bg-white/[0.035] dark:text-[rgba(237,241,239,0.68)] dark:hover:border-[#aebeff]/30 dark:hover:bg-white/[0.06] dark:hover:shadow-[0_14px_30px_rgba(0,0,0,0.14)]" href={`mailto:${CONTACT.email}`}>
-          <span className="grid size-[38px] place-items-center rounded-[12px] border border-[#5874d8]/15 bg-[#5874d8]/[0.07] text-[#5874d8] dark:border-[#aebeff]/15 dark:bg-[#aebeff]/[0.07] dark:text-[#aebeff]">
-            <Mail size={17} />
-          </span>
-          <span className="text-[9px] font-bold tracking-[0.08em] text-[rgba(25,44,62,0.48)] uppercase dark:text-[rgba(237,241,239,0.46)]">
-            {localize(TEXT.contact.email, language)}
-            <strong className="mt-[3px] block overflow-hidden text-[11px] font-semibold tracking-normal text-ellipsis whitespace-nowrap text-[#192c3e] normal-case dark:text-[#edf1ef]">{CONTACT.email}</strong>
-          </span>
-          <ArrowUpRight size={16} className="transition-transform duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-        </a>
-        <a
-          className="group grid grid-cols-[38px_1fr_18px] items-center gap-3 rounded-[18px] border border-[rgba(25,44,62,0.11)] bg-white/45 p-4 transition-[transform,border-color,background-color,box-shadow] duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform hover:-translate-y-0.5 hover:border-[#5874d8]/30 hover:bg-white/75 hover:shadow-[0_14px_30px_rgba(25,44,62,0.07)] motion-reduce:transform-none motion-reduce:transition-none max-[420px]:p-3.5 dark:border-white/10 dark:bg-white/[0.035] dark:text-[rgba(237,241,239,0.68)] dark:hover:border-[#aebeff]/30 dark:hover:bg-white/[0.06] dark:hover:shadow-[0_14px_30px_rgba(0,0,0,0.14)]"
-          href={CONTACT.whatsappHref}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <span className="grid size-[38px] place-items-center rounded-[12px] border border-[#5874d8]/15 bg-[#5874d8]/[0.07] text-[#5874d8] dark:border-[#aebeff]/15 dark:bg-[#aebeff]/[0.07] dark:text-[#aebeff]">
-            <WhatsAppIcon size={17} />
-          </span>
-          <span className="text-[9px] font-bold tracking-[0.08em] text-[rgba(25,44,62,0.48)] uppercase dark:text-[rgba(237,241,239,0.46)]">
-            {localize(TEXT.contact.phone, language)}
-            <strong className="mt-[3px] block overflow-hidden text-[11px] font-semibold tracking-normal text-ellipsis whitespace-nowrap text-[#192c3e] normal-case dark:text-[#edf1ef]">{CONTACT.phoneDisplay}</strong>
-          </span>
-          <ArrowUpRight size={16} className="transition-transform duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-        </a>
-      </div>
-      <footer className="mt-[45px] border-t border-[rgba(25,44,62,0.1)] pt-5 text-center font-mono text-[9px] tracking-[0.04em] text-[rgba(25,44,62,0.43)] dark:border-white/[0.09] dark:text-[rgba(237,241,239,0.46)]">
+      <footer className="mt-9 border-t border-[rgba(25,44,62,0.1)] pt-5 text-center font-mono text-[9px] tracking-[0.04em] text-[rgba(25,44,62,0.43)] dark:border-white/[0.09] dark:text-[rgba(237,241,239,0.46)]">
         © 2026 {PROFILE.name}
       </footer>
     </section>

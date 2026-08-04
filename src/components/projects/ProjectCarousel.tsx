@@ -85,7 +85,7 @@ export function ProjectCarousel({
 
       <div
         ref={viewportRef}
-        className="flex snap-x snap-mandatory touch-pan-x items-stretch overflow-x-auto overflow-y-hidden overscroll-x-contain scroll-smooth pb-1 transition-[height] duration-300 ease-out [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="flex snap-x snap-mandatory touch-auto items-stretch overflow-x-auto overflow-y-hidden overscroll-x-contain scroll-smooth pb-1 transition-[height] duration-300 ease-out [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         onScroll={updateActiveSlide}
         aria-label={title}
       >

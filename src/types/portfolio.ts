@@ -86,7 +86,10 @@ export type Profile = {
   readonly location: LocalizedText;
   readonly timezone: string;
   readonly photo: string;
+  readonly photoWebpSrcSet: string;
+  readonly photoSizes: string;
   readonly cv: string;
+  readonly atsCv: string;
   readonly linkedIn: string;
   readonly github: string;
 };

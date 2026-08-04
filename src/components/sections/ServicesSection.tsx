@@ -28,7 +28,7 @@ export function ServicesSection() {
 
           return (
             <article
-              className="group relative flex min-h-[285px] flex-col overflow-hidden rounded-[24px] border border-[rgba(25,44,62,0.12)] bg-white/40 p-6 shadow-[0_14px_38px_rgba(25,44,62,0.035)] transition-[transform,border-color,background-color,box-shadow] duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform hover:-translate-y-0.5 hover:border-[#5874d8]/30 hover:bg-white/70 hover:shadow-[0_18px_42px_rgba(25,44,62,0.09)] motion-reduce:transform-none motion-reduce:transition-none max-[1120px]:min-h-0 max-[420px]:rounded-[18px] max-[420px]:p-4 dark:border-white/10 dark:bg-white/[0.035] dark:shadow-none dark:hover:border-[#aebeff]/30 dark:hover:bg-white/[0.06] dark:hover:shadow-[0_18px_42px_rgba(0,0,0,0.16)]"
+              className="group relative flex min-h-[250px] flex-col overflow-hidden rounded-[24px] border border-[rgba(25,44,62,0.12)] bg-white/40 p-6 shadow-[0_14px_38px_rgba(25,44,62,0.035)] transition-[transform,border-color,background-color,box-shadow] duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform hover:-translate-y-0.5 hover:border-[#5874d8]/30 hover:bg-white/70 hover:shadow-[0_18px_42px_rgba(25,44,62,0.09)] motion-reduce:transform-none motion-reduce:transition-none max-[1120px]:min-h-0 max-[420px]:rounded-[18px] max-[420px]:p-4 dark:border-white/10 dark:bg-white/[0.035] dark:shadow-none dark:hover:border-[#aebeff]/30 dark:hover:bg-white/[0.06] dark:hover:shadow-[0_18px_42px_rgba(0,0,0,0.16)]"
               key={title}
             >
               <div className="flex items-center justify-between">
@@ -39,7 +39,7 @@ export function ServicesSection() {
                   0{index + 1}
                 </span>
               </div>
-              <h3 className="mt-auto pt-10 text-xl leading-[1.1] font-bold tracking-[-0.03em] max-[1120px]:mt-2 max-[1120px]:pt-3">
+              <h3 className="mt-8 text-xl leading-[1.1] font-bold tracking-[-0.03em] max-[1120px]:mt-5">
                 {title}
               </h3>
               <p className="mt-3 text-[13px] leading-[1.7] text-[rgba(25,44,62,0.6)] dark:text-[rgba(237,241,239,0.61)]">

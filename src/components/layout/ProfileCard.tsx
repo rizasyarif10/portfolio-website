@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { BriefcaseBusiness, Download, GitFork, Mail, MapPin } from "lucide-react";
+import { BriefcaseBusiness, Download, GitFork, MapPin } from "lucide-react";
 import { CONTACT, PROFILE, TEXT } from "../../constants/portfolio";
 import { useLanguage } from "../../contexts/LanguageContext";
 import { localize } from "../../utils/localize";
 import { LanguageToggle } from "../ui/LanguageToggle";
 import { PdfPreviewModal } from "../ui/PdfPreviewModal";
 import { ThemeToggle } from "../ui/ThemeToggle";
+import { WhatsAppIcon } from "../ui/WhatsAppIcon";
 
 export function ProfileCard() {
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
@@ -18,11 +19,23 @@ export function ProfileCard() {
         aria-label="Profile summary"
       >
         <div className="relative h-[45%] min-h-[255px] overflow-hidden bg-[#d8d8d0] max-[900px]:h-full max-[900px]:min-h-0 max-[620px]:h-[clamp(290px,90vw,360px)] max-[620px]:min-h-[clamp(290px,90vw,360px)]">
-          <img
-            className="h-full w-full origin-[center_24%] scale-[1.22] object-cover object-[center_18%] max-[900px]:scale-[1.4] max-[620px]:scale-100 max-[620px]:object-[center_12%]"
-            src={PROFILE.photo}
-            alt={PROFILE.name}
-          />
+          <picture className="block h-full w-full">
+            <source
+              type="image/webp"
+              srcSet={PROFILE.photoWebpSrcSet}
+              sizes={PROFILE.photoSizes}
+            />
+            <img
+              className="h-full w-full origin-[center_24%] scale-[1.22] object-cover object-[center_18%] max-[900px]:scale-[1.4] max-[620px]:scale-100 max-[620px]:object-[center_12%]"
+              src={PROFILE.photo}
+              width="1066"
+              height="1600"
+              alt={PROFILE.name}
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+            />
+          </picture>
           <span
             aria-hidden="true"
             className="pointer-events-none absolute inset-x-0 bottom-0 h-[36%] bg-[linear-gradient(to_top,rgba(49,56,60,1)_0%,rgba(49,56,60,0.94)_34%,rgba(49,56,60,0.48)_68%,transparent_100%)] max-[620px]:h-[24%] max-[620px]:bg-[linear-gradient(to_top,rgba(49,56,60,0.96)_0%,rgba(49,56,60,0.72)_38%,rgba(49,56,60,0.24)_72%,transparent_100%)] dark:bg-[linear-gradient(to_top,rgba(11,27,43,1)_0%,rgba(11,27,43,0.94)_34%,rgba(11,27,43,0.48)_68%,transparent_100%)] dark:max-[620px]:bg-[linear-gradient(to_top,rgba(11,27,43,0.96)_0%,rgba(11,27,43,0.72)_38%,rgba(11,27,43,0.24)_72%,transparent_100%)]"
@@ -52,11 +65,11 @@ export function ProfileCard() {
           <div className="mt-6 flex gap-2 max-[420px]:mt-5">
             <a className="grid size-10 place-items-center rounded-full border border-white/20 transition duration-200 hover:bg-[#f7f5ee] hover:text-[#192c3e]" href={PROFILE.linkedIn} target="_blank" rel="noreferrer" aria-label="LinkedIn"><BriefcaseBusiness size={18} /></a>
             <a className="grid size-10 place-items-center rounded-full border border-white/20 transition duration-200 hover:bg-[#f7f5ee] hover:text-[#192c3e]" href={PROFILE.github} target="_blank" rel="noreferrer" aria-label="GitHub"><GitFork size={18} /></a>
-            <a className="grid size-10 place-items-center rounded-full border border-white/20 transition duration-200 hover:bg-[#f7f5ee] hover:text-[#192c3e]" href={`mailto:${CONTACT.email}`} aria-label="Email"><Mail size={18} /></a>
+            <a className="grid size-10 place-items-center rounded-full border border-white/20 transition duration-200 hover:bg-[#f7f5ee] hover:text-[#192c3e]" href={CONTACT.whatsappHref} target="_blank" rel="noreferrer" aria-label="WhatsApp"><WhatsAppIcon size={18} /></a>
           </div>
           <button
             type="button"
-            className="mt-auto flex w-full cursor-pointer items-center justify-between rounded-[14px] bg-[#f7f5ee] px-[18px] py-4 text-left text-xs font-bold text-[#282c2f] transition duration-200 hover:-translate-y-0.5 max-[620px]:mt-8 max-[420px]:mt-7 max-[420px]:py-3.5"
+            className="mt-auto flex w-full cursor-pointer items-center justify-between rounded-[14px] bg-[#f7f5ee] px-[18px] py-4 text-left text-xs font-bold text-[#282c2f] transition duration-200 hover:bg-white max-[620px]:mt-8 max-[420px]:mt-7 max-[420px]:py-3.5"
             onClick={() => setIsPreviewOpen(true)}
           >
             {localize(TEXT.profile.previewCv, language)} <Download size={17} />
@@ -66,7 +79,11 @@ export function ProfileCard() {
 
       <PdfPreviewModal
         fileUrl={PROFILE.cv}
-        fileName={`${PROFILE.name} — CV 2026`}
+        fileName={`${PROFILE.name} — Curriculum Vitae`}
+        secondaryDownload={{
+          url: PROFILE.atsCv,
+          label: localize(TEXT.pdf.downloadAts, language),
+        }}
         isOpen={isPreviewOpen}
         onClose={() => setIsPreviewOpen(false)}
       />

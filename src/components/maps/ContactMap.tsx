@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { LocateFixed } from "lucide-react";
 import {
   AttributionControl,
   Map,
@@ -10,6 +11,7 @@ import {
 import type { BaseMapLayer } from "../../types/map";
 
 const SOUTH_TANGERANG: [number, number] = [106.7457983, -6.3115675];
+const INITIAL_ZOOM = 9.7;
 
 const BASE_LAYER_CONFIG: Record<
   BaseMapLayer,
@@ -50,19 +52,21 @@ function createMapStyle(layer: BaseMapLayer): StyleSpecification {
 type ContactMapProps = {
   locationLabel: string;
   availabilityText: string;
+  resetLabel: string;
   baseLayer: BaseMapLayer;
 };
 
 export function ContactMap({
   locationLabel,
   availabilityText,
+  resetLabel,
   baseLayer,
 }: ContactMapProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
   const markerElementRef = useRef<HTMLDivElement | null>(null);
   const popupRef = useRef<Popup | null>(null);
-  const [zoomLevel, setZoomLevel] = useState(9.7);
+  const [zoomLevel, setZoomLevel] = useState(INITIAL_ZOOM);
 
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
@@ -71,7 +75,7 @@ export function ContactMap({
       container: containerRef.current,
       style: createMapStyle(baseLayer),
       center: SOUTH_TANGERANG,
-      zoom: 9.7,
+      zoom: INITIAL_ZOOM,
       minZoom: 3,
       cooperativeGestures: false,
       scrollZoom: true,
@@ -180,6 +184,16 @@ export function ContactMap({
     map.easeTo({ zoom: nextZoom, duration: 240 });
   };
 
+  const resetView = () => {
+    mapRef.current?.easeTo({
+      center: SOUTH_TANGERANG,
+      zoom: INITIAL_ZOOM,
+      bearing: 0,
+      pitch: 0,
+      duration: 600,
+    });
+  };
+
   return (
     <div className="relative h-full w-full">
       <div
@@ -187,28 +201,39 @@ export function ContactMap({
         className="h-full w-full"
         aria-label={`Map of ${locationLabel}`}
       />
-      <div className="absolute top-2.5 right-2.5 z-10 flex w-8 flex-col items-center overflow-hidden rounded-[10px] border border-[rgba(25,44,62,0.14)] bg-white/95 text-[#282c2f] shadow-[0_6px_16px_rgba(25,44,62,0.18)] backdrop-blur-xl">
+      <div className="absolute top-2.5 right-2.5 z-10 flex w-8 flex-col gap-1.5 text-[#282c2f]">
+        <div className="flex flex-col items-center overflow-hidden rounded-[10px] border border-[rgba(25,44,62,0.14)] bg-white/95 shadow-[0_6px_16px_rgba(25,44,62,0.18)] backdrop-blur-xl">
+          <button
+            type="button"
+            className="grid h-7 w-full cursor-pointer place-items-center text-base font-medium transition-colors hover:bg-[#657780] hover:text-white"
+            onClick={() => changeZoom(1)}
+            aria-label="Zoom in"
+          >
+            +
+          </button>
+          <output
+            className="grid h-[22px] w-full place-items-center border-y border-[rgba(25,44,62,0.12)] font-mono text-[9px] font-bold tabular-nums"
+            aria-label={`Current zoom ${Math.round(zoomLevel)}`}
+          >
+            {Math.round(zoomLevel)}
+          </output>
+          <button
+            type="button"
+            className="grid h-7 w-full cursor-pointer place-items-center text-base font-medium transition-colors hover:bg-[#657780] hover:text-white"
+            onClick={() => changeZoom(-1)}
+            aria-label="Zoom out"
+          >
+            −
+          </button>
+        </div>
         <button
           type="button"
-          className="grid h-7 w-full cursor-pointer place-items-center text-base font-medium transition-colors hover:bg-[#657780] hover:text-white"
-          onClick={() => changeZoom(1)}
-          aria-label="Zoom in"
+          className="grid size-8 cursor-pointer place-items-center rounded-[10px] border border-[rgba(25,44,62,0.14)] bg-white/95 shadow-[0_6px_16px_rgba(25,44,62,0.18)] backdrop-blur-xl transition-colors hover:bg-[#657780] hover:text-white"
+          onClick={resetView}
+          aria-label={resetLabel}
+          title={resetLabel}
         >
-          +
-        </button>
-        <output
-          className="grid h-[22px] w-full place-items-center border-y border-[rgba(25,44,62,0.12)] font-mono text-[9px] font-bold tabular-nums"
-          aria-label={`Current zoom ${Math.round(zoomLevel)}`}
-        >
-          {Math.round(zoomLevel)}
-        </output>
-        <button
-          type="button"
-          className="grid h-7 w-full cursor-pointer place-items-center text-base font-medium transition-colors hover:bg-[#657780] hover:text-white"
-          onClick={() => changeZoom(-1)}
-          aria-label="Zoom out"
-        >
-          −
+          <LocateFixed size={14} strokeWidth={2.2} />
         </button>
       </div>
     </div>

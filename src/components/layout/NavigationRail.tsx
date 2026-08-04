@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { Mail } from "lucide-react";
-import { CONTACT, NAVIGATION } from "../../constants/portfolio";
+import { NAVIGATION } from "../../constants/portfolio";
 import { useLanguage } from "../../contexts/LanguageContext";
 import { localize } from "../../utils/localize";
 import { navigateToSection } from "../../utils/smoothScroll";
@@ -82,13 +81,6 @@ export function NavigationRail() {
           );
         })}
       </nav>
-      <a
-        className="grid h-[68px] w-full shrink-0 place-items-center border-t border-white/10 transition duration-200 hover:bg-[#4f6fce] hover:text-white"
-        href={`mailto:${CONTACT.email}`}
-        aria-label="Email"
-      >
-        <Mail size={17} />
-      </a>
     </aside>
   );
 }

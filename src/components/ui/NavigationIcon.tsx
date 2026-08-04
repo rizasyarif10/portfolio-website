@@ -1,4 +1,4 @@
-import { BriefcaseBusiness, FileText, Mail, UserRound, Wrench } from "lucide-react";
+import { BriefcaseBusiness, FileText, MessageCircle, UserRound, Wrench } from "lucide-react";
 import type { NavigationIcon as NavigationIconName } from "../../types/portfolio";
 
 const NAVIGATION_ICONS = {
@@ -6,7 +6,7 @@ const NAVIGATION_ICONS = {
   work: BriefcaseBusiness,
   resume: FileText,
   skills: Wrench,
-  contact: Mail,
+  contact: MessageCircle,
 } satisfies Record<NavigationIconName, typeof UserRound>;
 
 type NavigationIconProps = {

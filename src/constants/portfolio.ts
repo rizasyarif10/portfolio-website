@@ -752,6 +752,7 @@ export const TEXT = {
   },
   profile: {
     previewCv: localized("Preview CV", "Lihat CV"),
+    views: localized("profile visits", "kunjungan profil"),
   },
   pdf: {
     preview: localized("Document preview", "Pratinjau dokumen"),

@@ -65,9 +65,9 @@ export function ProfileCard() {
           </p>
           <ProfileViewCounter />
           <div className="mt-6 flex gap-2 max-[420px]:mt-5">
-            <a className="grid size-10 place-items-center rounded-full border border-white/20 transition duration-200 hover:bg-[#f7f5ee] hover:text-[#192c3e]" href={PROFILE.linkedIn} target="_blank" rel="noreferrer" aria-label="LinkedIn"><BriefcaseBusiness size={18} /></a>
-            <a className="grid size-10 place-items-center rounded-full border border-white/20 transition duration-200 hover:bg-[#f7f5ee] hover:text-[#192c3e]" href={PROFILE.github} target="_blank" rel="noreferrer" aria-label="GitHub"><GitFork size={18} /></a>
-            <a className="grid size-10 place-items-center rounded-full border border-white/20 transition duration-200 hover:bg-[#f7f5ee] hover:text-[#192c3e]" href={CONTACT.whatsappHref} target="_blank" rel="noreferrer" aria-label="WhatsApp"><WhatsAppIcon size={18} /></a>
+            <a className="grid size-10 place-items-center rounded-full border border-white/20 transition duration-200 hover:bg-[#f7f5ee] hover:text-[#192c3e]" href={PROFILE.linkedIn} target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn"><BriefcaseBusiness size={18} /></a>
+            <a className="grid size-10 place-items-center rounded-full border border-white/20 transition duration-200 hover:bg-[#f7f5ee] hover:text-[#192c3e]" href={PROFILE.github} target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub"><GitFork size={18} /></a>
+            <a className="grid size-10 place-items-center rounded-full border border-white/20 transition duration-200 hover:bg-[#f7f5ee] hover:text-[#192c3e]" href={CONTACT.whatsappHref} target="_blank" rel="noreferrer" aria-label="WhatsApp" title="WhatsApp"><WhatsAppIcon size={18} /></a>
           </div>
           <button
             type="button"

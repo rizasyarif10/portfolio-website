@@ -41,10 +41,10 @@ export function ProjectShowcaseCard({
         }`}
       >
         <div className="flex min-h-8 items-center gap-3">
-          <span className="font-mono text-[9px] font-bold text-[#5874d8] dark:text-[#aebeff]">
+          <span className="font-mono text-[9px] font-bold text-[#4a63c4] dark:text-[#aebeff]">
             {String(index + 1).padStart(2, "0")}
           </span>
-          <span className="text-[9px] font-bold tracking-[0.12em] text-[#657780] uppercase dark:text-[#b4c0a5]">
+          <span className="text-[9px] font-bold tracking-[0.12em] text-[#56666e] uppercase dark:text-[#b4c0a5]">
             {localize(project.type, language)}
           </span>
         </div>
@@ -52,11 +52,11 @@ export function ProjectShowcaseCard({
         <h3 className="mt-6 text-[25px] leading-[1.04] font-bold tracking-[-0.04em] max-[420px]:mt-4 max-[420px]:text-[22px]">
           {project.title}
         </h3>
-        <p className="mt-3 text-[13px] leading-[1.68] text-[rgba(25,44,62,0.6)] max-[420px]:text-[12px] dark:text-[rgba(237,241,239,0.61)]">
+        <p className="mt-3 text-[13px] leading-[1.68] text-[rgba(25,44,62,0.66)] max-[420px]:text-[12px] dark:text-[rgba(237,241,239,0.61)]">
           {localize(project.description, language)}
         </p>
         <div className="mt-4 border-t border-[rgba(25,44,62,0.09)] pt-4 dark:border-white/8">
-          <span className="block text-[8px] font-bold tracking-[0.11em] text-[#657780] uppercase dark:text-[#b4c0a5]">
+          <span className="block text-[8px] font-bold tracking-[0.11em] text-[#56666e] uppercase dark:text-[#b4c0a5]">
             {localize(TEXT.work.contribution, language)}
           </span>
           <strong className="mt-1.5 block text-[11px] font-semibold">
@@ -66,7 +66,7 @@ export function ProjectShowcaseCard({
         <div className="mt-4 flex flex-wrap gap-1.5">
           {project.stack.map((technology) => (
             <small
-              className="rounded-full border border-[rgba(25,44,62,0.1)] bg-white/55 px-2.5 py-1.5 text-[9px] font-bold text-[#657780] dark:border-white/10 dark:bg-white/4 dark:text-[#b4c0a5]"
+              className="rounded-full border border-[rgba(25,44,62,0.1)] bg-white/55 px-2.5 py-1.5 text-[9px] font-bold text-[#56666e] dark:border-white/10 dark:bg-white/4 dark:text-[#b4c0a5]"
               key={technology}
             >
               {technology}

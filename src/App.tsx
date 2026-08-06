@@ -19,9 +19,9 @@ function App() {
       >
         <AboutSection />
         <ServicesSection />
+        <ProjectsSection />
         <ResumeSection />
         <TechStackSection />
-        <ProjectsSection />
         <ContactSection />
       </main>
 

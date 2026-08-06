@@ -1,0 +1,23 @@
+# Mochamad Riza Syarif
+
+> Frontend Engineer with 7+ years of experience developing and maintaining web applications, dashboards, and data visualizations for internal products and client projects. Based in South Tangerang, Indonesia (UTC+7), available for remote and hybrid work.
+
+Core stack: React, Next.js, TypeScript, Vite, Redux Toolkit, Zustand, TanStack Query, Tailwind CSS, MapLibre GL, Leaflet.js, Jest, and Vitest. Main focus areas are frontend development, map and data interfaces, and quality and integration work such as REST API integration, unit testing, debugging, and refactoring.
+
+Currently open to Frontend Engineer and Web Developer opportunities.
+
+## Profile
+
+- [Portfolio](https://rizasyarif.web.id/): Single-page portfolio covering background, projects, experience, skills, and contact details.
+- [Curriculum Vitae (PDF)](https://rizasyarif.web.id/Mochamad-Riza-Syarif-CV.pdf): Full CV with work history, technical skills, and education.
+- [ATS-friendly CV (PDF)](https://rizasyarif.web.id/Mochamad-Riza-Syarif-CV-ATS.pdf): Plain-text-oriented version of the same CV for applicant tracking systems.
+
+## Elsewhere
+
+- [LinkedIn](https://www.linkedin.com/in/mochamad-riza-syarif/): Professional profile and work history.
+- [GitHub](https://github.com/rizasyarif10): Public repositories and code samples.
+
+## Contact
+
+- [Email](mailto:rizasyarif20@gmail.com): rizasyarif20@gmail.com
+- [WhatsApp](https://wa.me/6289604406612): +62 896-0440-6612

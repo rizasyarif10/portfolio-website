@@ -54,7 +54,7 @@ export function PdfPreviewModal({
           <div className="flex min-w-0 items-center gap-2.75">
             <FileText size={19} />
             <span className="flex min-w-0 flex-col">
-              <small className="text-[9px] font-bold tracking-[0.08em] text-[rgba(25,44,62,0.48)] uppercase dark:text-[rgba(237,241,239,0.46)]">{localize(TEXT.pdf.preview, language)}</small>
+              <small className="text-[9px] font-bold tracking-[0.08em] text-[rgba(25,44,62,0.66)] uppercase dark:text-[rgba(237,241,239,0.5)]">{localize(TEXT.pdf.preview, language)}</small>
               <strong className="mt-0.5 overflow-hidden text-xs text-ellipsis whitespace-nowrap" id="pdf-preview-title">{fileName}</strong>
             </span>
           </div>

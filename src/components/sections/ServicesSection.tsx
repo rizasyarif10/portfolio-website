@@ -32,17 +32,17 @@ export function ServicesSection() {
               key={title}
             >
               <div className="flex items-center justify-between">
-                <div className="grid size-11 place-items-center rounded-[14px] border border-[#5874d8]/15 bg-[#5874d8]/[0.07] text-[#5874d8] transition-colors duration-420 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:bg-[#5874d8] group-hover:text-white dark:border-[#aebeff]/15 dark:bg-[#aebeff]/[0.07] dark:text-[#aebeff]">
+                <div className="grid size-11 place-items-center rounded-[14px] border border-[#5874d8]/15 bg-[#5874d8]/[0.07] text-[#4a63c4] transition-colors duration-420 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:bg-[#5874d8] group-hover:text-white dark:border-[#aebeff]/15 dark:bg-[#aebeff]/[0.07] dark:text-[#aebeff]">
                   <Icon size={19} />
                 </div>
-                <span className="font-mono text-[9px] font-bold tracking-[0.12em] text-[rgba(25,44,62,0.34)] dark:text-white/30">
+                <span className="font-mono text-[9px] font-bold tracking-[0.12em] text-[rgba(25,44,62,0.66)] dark:text-white/50">
                   0{index + 1}
                 </span>
               </div>
               <h3 className="mt-8 text-xl leading-[1.1] font-bold tracking-[-0.03em] max-[1120px]:mt-5">
                 {title}
               </h3>
-              <p className="mt-3 text-[13px] leading-[1.7] text-[rgba(25,44,62,0.6)] dark:text-[rgba(237,241,239,0.61)]">
+              <p className="mt-3 text-[13px] leading-[1.7] text-[rgba(25,44,62,0.66)] dark:text-[rgba(237,241,239,0.61)]">
                 {localize(service.description, language)}
               </p>
               <span className="absolute right-6 bottom-0 left-6 h-0.5 origin-left scale-x-[0.28] bg-[linear-gradient(90deg,#5874d8,#d28a22)] transition-transform duration-520 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-x-100" />

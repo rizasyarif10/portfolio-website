@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BriefcaseBusiness, Download, GitFork, MapPin } from "lucide-react";
+import { BriefcaseBusiness, Eye, GitFork, MapPin } from "lucide-react";
 import { CONTACT, PROFILE, TEXT } from "../../constants/portfolio";
 import { useLanguage } from "../../contexts/LanguageContext";
 import { localize } from "../../utils/localize";
@@ -60,7 +60,7 @@ export function ProfileCard() {
               </span>
             ))}
           </h2>
-          <p className="mt-4.25 flex items-center gap-1.75 text-[11px] text-white/65 max-[420px]:text-[10px]">
+          <p className="mt-4.25 flex items-center gap-1.75 text-[11px] text-white/80 max-[420px]:text-[10px]">
             <MapPin size={15} /> {localize(PROFILE.location, language)} · {PROFILE.timezone}
           </p>
           <ProfileViewCounter />
@@ -74,7 +74,7 @@ export function ProfileCard() {
             className="mt-auto flex w-full cursor-pointer items-center justify-between rounded-[14px] bg-[#f7f5ee] px-4.5 py-4 text-left text-xs font-bold text-[#282c2f] transition duration-200 hover:bg-white max-[620px]:mt-8 max-[420px]:mt-7 max-[420px]:py-3.5"
             onClick={() => setIsPreviewOpen(true)}
           >
-            {localize(TEXT.profile.previewCv, language)} <Download size={17} />
+            {localize(TEXT.profile.previewCv, language)} <Eye size={17} />
           </button>
         </div>
       </aside>

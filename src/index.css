@@ -111,7 +111,7 @@
   }
 
   .maplibregl-popup-content span {
-    @apply text-[11px] text-[rgba(25,44,62,0.62)];
+    @apply text-[11px] text-[rgba(25,44,62,0.66)];
   }
 
   .maplibregl-ctrl-group {

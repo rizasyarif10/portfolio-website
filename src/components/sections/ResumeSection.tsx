@@ -18,11 +18,11 @@ export function ResumeSection() {
         note={localize(TEXT.resume.note, language)}
       />
       <div className="mb-5 flex items-center gap-3">
-        <span className="grid size-9 place-items-center rounded-xl bg-[#5874d8]/10 text-[#5874d8] dark:bg-[#aebeff]/10 dark:text-[#aebeff]">
+        <span className="grid size-9 place-items-center rounded-xl bg-[#5874d8]/10 text-[#4a63c4] dark:bg-[#aebeff]/10 dark:text-[#aebeff]">
           <BriefcaseBusiness size={17} strokeWidth={1.8} />
         </span>
         <div>
-          <span className="block font-mono text-[8px] font-bold tracking-[0.14em] text-[#657780] uppercase dark:text-[#b4c0a5]">
+          <span className="block font-mono text-[8px] font-bold tracking-[0.14em] text-[#56666e] uppercase dark:text-[#b4c0a5]">
             2017 — {language === "en" ? "Present" : "Sekarang"}
           </span>
           <h3 className="mt-0.5 text-[15px] font-bold tracking-[-0.02em]">
@@ -36,7 +36,7 @@ export function ResumeSection() {
             className="relative grid grid-cols-[104px_16px_1fr] gap-2 py-2.5 max-[620px]:grid-cols-[14px_1fr] max-[620px]:gap-x-3"
             key={item.company}
           >
-            <p className="pt-5 font-mono text-[9px] leading-normal font-bold tracking-[0.04em] text-[rgba(25,44,62,0.43)] uppercase max-[620px]:col-span-2 max-[620px]:pl-7 max-[620px]:pt-1 dark:text-[rgba(237,241,239,0.45)]">
+            <p className="pt-5 font-mono text-[9px] leading-normal font-bold tracking-[0.04em] text-[rgba(25,44,62,0.66)] uppercase max-[620px]:col-span-2 max-[620px]:pl-7 max-[620px]:pt-1 dark:text-[rgba(237,241,239,0.5)]">
               {localize(item.period, language)}
             </p>
             <span className="relative z-1 mt-5.25 grid size-3.25 justify-self-center place-items-center rounded-full border-2 border-[#f4f3ef] bg-[#5874d8] shadow-[0_0_0_3px_rgba(88,116,216,0.13)] max-[620px]:mt-6.25 dark:border-[#0b1726] dark:bg-[#aebeff]">
@@ -44,17 +44,17 @@ export function ResumeSection() {
             </span>
             <div className="rounded-[22px] border border-[rgba(25,44,62,0.11)] bg-white/40 p-5 transition-[transform,border-color,background-color,box-shadow] duration-420 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform hover:-translate-y-0.5 hover:border-[#5874d8]/25 hover:bg-white/65 hover:shadow-[0_16px_36px_rgba(25,44,62,0.07)] motion-reduce:transform-none motion-reduce:transition-none max-[620px]:mt-2 max-[420px]:rounded-[18px] max-[420px]:p-4 dark:border-white/10 dark:bg-white/[0.035] dark:hover:border-[#aebeff]/25 dark:hover:bg-white/5.5 dark:hover:shadow-[0_16px_36px_rgba(0,0,0,0.14)]">
               <div className="flex items-center justify-between gap-4">
-                <span className="text-[10px] font-bold tracking-widest text-[#657780] uppercase dark:text-[#b4c0a5]">
+                <span className="text-[10px] font-bold tracking-widest text-[#56666e] uppercase dark:text-[#b4c0a5]">
                   {localize(item.role, language)}
                 </span>
-                <span className="font-mono text-[9px] text-[rgba(25,44,62,0.3)] dark:text-white/25">
+                <span className="font-mono text-[9px] text-[rgba(25,44,62,0.66)] dark:text-white/50">
                   0{index + 1}
                 </span>
               </div>
               <h3 className="mt-2 text-xl font-bold tracking-[-0.03em]">
                 {item.company}
               </h3>
-              <p className="mt-2.5 text-[13px] leading-[1.7] text-[rgba(25,44,62,0.6)] dark:text-[rgba(237,241,239,0.61)]">
+              <p className="mt-2.5 text-[13px] leading-[1.7] text-[rgba(25,44,62,0.66)] dark:text-[rgba(237,241,239,0.61)]">
                 {localize(item.description, language)}
               </p>
               {item.responsibilities && (
@@ -64,7 +64,7 @@ export function ResumeSection() {
 
                     return (
                       <li
-                        className="grid grid-cols-[7px_1fr] gap-2.5 text-[12px] leading-[1.65] text-[rgba(25,44,62,0.61)] dark:text-[rgba(237,241,239,0.62)]"
+                        className="grid grid-cols-[7px_1fr] gap-2.5 text-[12px] leading-[1.65] text-[rgba(25,44,62,0.66)] dark:text-[rgba(237,241,239,0.62)]"
                         key={text}
                       >
                         <span className="mt-1.75 size-1.25 rounded-full bg-[#5874d8] shadow-[0_0_0_3px_rgba(88,116,216,0.09)] dark:bg-[#aebeff]" />
@@ -76,7 +76,7 @@ export function ResumeSection() {
               )}
               {item.projectGroups && (
                 <div className="mt-4 border-t border-[rgba(25,44,62,0.08)] pt-4 dark:border-white/8">
-                  <span className="mb-2.5 block font-mono text-[8px] font-bold tracking-[0.12em] text-[#657780] uppercase dark:text-[#b4c0a5]">
+                  <span className="mb-2.5 block font-mono text-[8px] font-bold tracking-[0.12em] text-[#56666e] uppercase dark:text-[#b4c0a5]">
                     {localize(TEXT.resume.selectedProjects, language)}
                   </span>
                   <div className="grid grid-cols-2 gap-2.5 max-[720px]:grid-cols-1">
@@ -89,7 +89,7 @@ export function ResumeSection() {
                         }`}
                         key={localize(group.label, language)}
                       >
-                        <span className="mb-2.5 block text-[8px] font-bold tracking-widest text-[#5874d8] uppercase dark:text-[#aebeff]">
+                        <span className="mb-2.5 block text-[8px] font-bold tracking-widest text-[#4a63c4] uppercase dark:text-[#aebeff]">
                           {localize(group.label, language)}
                         </span>
                         <ul
@@ -101,7 +101,7 @@ export function ResumeSection() {
                         >
                           {group.items.map((project) => (
                             <li
-                              className="grid grid-cols-[5px_1fr] gap-2 text-[10px] leading-normal text-[rgba(25,44,62,0.64)] dark:text-[rgba(237,241,239,0.65)]"
+                              className="grid grid-cols-[5px_1fr] gap-2 text-[10px] leading-normal text-[rgba(25,44,62,0.66)] dark:text-[rgba(237,241,239,0.65)]"
                               key={project.name}
                             >
                               <span className="mt-1.25 size-1 rounded-full bg-[#f2b85c]" />
@@ -110,7 +110,7 @@ export function ResumeSection() {
                                   {project.name}
                                 </strong>
                                 {project.detail && (
-                                  <span className="text-[rgba(25,44,62,0.46)] dark:text-[rgba(237,241,239,0.44)]">
+                                  <span className="text-[rgba(25,44,62,0.66)] dark:text-[rgba(237,241,239,0.5)]">
                                     {" — "}
                                     {localize(project.detail, language)}
                                   </span>
@@ -131,7 +131,7 @@ export function ResumeSection() {
 
       <div className="mt-8 border-t border-[rgba(25,44,62,0.1)] pt-7 dark:border-white/9">
         <div className="mb-5 flex items-center gap-3">
-          <span className="grid size-9 place-items-center rounded-xl bg-[#5874d8]/10 text-[#5874d8] dark:bg-[#aebeff]/10 dark:text-[#aebeff]">
+          <span className="grid size-9 place-items-center rounded-xl bg-[#5874d8]/10 text-[#4a63c4] dark:bg-[#aebeff]/10 dark:text-[#aebeff]">
             <GraduationCap size={17} strokeWidth={1.8} />
           </span>
           <h3 className="text-[15px] font-bold tracking-[-0.02em]">
@@ -140,13 +140,13 @@ export function ResumeSection() {
         </div>
 
         <article className="rounded-[22px] border border-[rgba(25,44,62,0.11)] bg-white/40 p-5 transition-[transform,border-color,background-color,box-shadow] duration-420 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform hover:-translate-y-0.5 hover:border-[#5874d8]/25 hover:bg-white/65 hover:shadow-[0_16px_36px_rgba(25,44,62,0.07)] motion-reduce:transform-none motion-reduce:transition-none max-[420px]:rounded-[18px] max-[420px]:p-4 dark:border-white/10 dark:bg-white/[0.035] dark:hover:border-[#aebeff]/25 dark:hover:bg-white/5.5 dark:hover:shadow-[0_16px_36px_rgba(0,0,0,0.14)]">
-          <span className="block font-mono text-[9px] font-bold tracking-widest text-[#5874d8] uppercase dark:text-[#aebeff]">
+          <span className="block font-mono text-[9px] font-bold tracking-widest text-[#4a63c4] uppercase dark:text-[#aebeff]">
             {EDUCATION.period}
           </span>
           <h3 className="mt-2.5 text-xl font-bold tracking-[-0.025em]">
             {EDUCATION.institution}
           </h3>
-          <p className="mt-2 text-[13px] leading-[1.65] text-[rgba(25,44,62,0.6)] dark:text-[rgba(237,241,239,0.61)]">
+          <p className="mt-2 text-[13px] leading-[1.65] text-[rgba(25,44,62,0.66)] dark:text-[rgba(237,241,239,0.61)]">
             {localize(EDUCATION.degree, language)}
           </p>
         </article>

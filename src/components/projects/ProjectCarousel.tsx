@@ -51,7 +51,7 @@ export function ProjectCarousel({
     <div>
       <div className="mb-5 flex items-center justify-between gap-4 max-[420px]:gap-2">
         <div className="flex items-center gap-3">
-          <span className="grid size-9 place-items-center rounded-xl bg-[#5874d8]/10 text-[#5874d8] max-[420px]:size-8 max-[420px]:rounded-[10px] dark:bg-[#aebeff]/10 dark:text-[#aebeff]">
+          <span className="grid size-9 place-items-center rounded-xl bg-[#5874d8]/10 text-[#4a63c4] max-[420px]:size-8 max-[420px]:rounded-[10px] dark:bg-[#aebeff]/10 dark:text-[#aebeff]">
             <Icon size={17} strokeWidth={1.8} />
           </span>
           <h3 className="text-[15px] font-bold tracking-[-0.02em] max-[420px]:text-[13px]">{title}</h3>
@@ -59,7 +59,7 @@ export function ProjectCarousel({
 
         {projects.length > 1 && (
           <div className="flex items-center gap-2">
-            <span className="mr-1 font-mono text-[8px] font-bold tracking-[0.08em] text-[rgba(25,44,62,0.45)] max-[420px]:hidden dark:text-white/40">
+            <span className="mr-1 font-mono text-[8px] font-bold tracking-[0.08em] text-[rgba(25,44,62,0.66)] max-[420px]:hidden dark:text-white/50">
               {String(activeIndex + 1).padStart(2, "0")} /{" "}
               {String(projects.length).padStart(2, "0")}
             </span>

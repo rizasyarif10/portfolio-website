@@ -62,7 +62,7 @@ export function ContactMap({
   resetLabel,
   baseLayer,
 }: ContactMapProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
   const markerElementRef = useRef<HTMLDivElement | null>(null);
   const popupRef = useRef<Popup | null>(null);
@@ -90,6 +90,7 @@ export function ContactMap({
     const markerElement = document.createElement("div");
     markerElement.className =
       "relative grid size-13.5 cursor-pointer place-items-center";
+    markerElement.setAttribute("role", "img");
     const radarRings = Array.from({ length: 3 }, (_, index) => {
       const ring = document.createElement("span");
       const delayClass =
@@ -196,7 +197,7 @@ export function ContactMap({
 
   return (
     <div className="relative h-full w-full">
-      <div
+      <section
         ref={containerRef}
         className="h-full w-full"
         aria-label={`Map of ${locationLabel}`}

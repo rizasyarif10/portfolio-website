@@ -18,13 +18,13 @@ export function AboutSection() {
       icon: BriefcaseBusiness,
       label: localize(TEXT.about.experienceLabel, language),
       value: `${CAREER_STATS[0].value} ${localize(TEXT.about.yearsLabel, language)}`,
-      accent: "text-[#5874d8] dark:text-[#aebeff]",
+      accent: "text-[#4a63c4] dark:text-[#aebeff]",
     },
     {
       icon: LayoutDashboard,
       label: localize(TEXT.about.focusLabel, language),
       value: localize(TEXT.about.focusValue, language),
-      accent: "text-[#657780] dark:text-[#b4c0a5]",
+      accent: "text-[#56666e] dark:text-[#b4c0a5]",
     },
     {
       icon: Braces,
@@ -36,7 +36,7 @@ export function AboutSection() {
       icon: Map,
       label: localize(TEXT.about.specialtyLabel, language),
       value: localize(TEXT.about.specialtyValue, language),
-      accent: "text-[#5874d8] dark:text-[#aebeff]",
+      accent: "text-[#4a63c4] dark:text-[#aebeff]",
     },
   ] as const;
 
@@ -56,25 +56,25 @@ export function AboutSection() {
 
       <div className="relative z-1">
         <div className="mb-10 flex items-center gap-3 max-[620px]:mb-8">
-          <span className="font-mono text-[10px] font-bold tracking-[0.14em] text-[#5874d8] dark:text-[#aebeff]">
+          <span className="font-mono text-[10px] font-bold tracking-[0.14em] text-[#4a63c4] dark:text-[#aebeff]">
             01 / ABOUT
           </span>
           <span className="h-px flex-1 bg-[rgba(25,44,62,0.13)] dark:bg-white/11" />
-          <span className="font-mono text-[9px] tracking-[0.12em] text-[rgba(25,44,62,0.38)] uppercase dark:text-white/35">
+          <span className="font-mono text-[9px] tracking-[0.12em] text-[rgba(25,44,62,0.66)] uppercase dark:text-white/50">
             {localize(TEXT.about.process, language)}
           </span>
         </div>
 
         <div className="grid grid-cols-[minmax(0,1.4fr)_minmax(215px,0.6fr)] gap-[clamp(28px,4vw,52px)] max-[720px]:grid-cols-1 max-[720px]:gap-10">
           <div className="flex flex-col items-start">
-            <h1 className="max-w-172.5 text-[clamp(38px,3.85vw,50px)] leading-none font-bold tracking-[-0.055em] max-[620px]:text-[36px] max-[420px]:text-[33px]">
+            <h1 className="max-w-190 text-[clamp(34px,3.4vw,46px)] leading-[1.08] font-bold tracking-[-0.045em] max-[620px]:text-[32px] max-[420px]:text-[28px]">
               {localize(TEXT.about.headlineStart, language)}{" "}
-              <span className="text-[#5874d8] dark:text-[#aebeff]">
+              <span className="text-[#4a63c4] dark:text-[#aebeff]">
                 {localize(TEXT.about.headlineEmphasis, language)}
               </span>
             </h1>
 
-            <p className="mt-7 max-w-152.5 border-l-2 border-[#d28a22]/65 pl-5 text-[16px] leading-[1.75] text-[rgba(25,44,62,0.66)] max-[620px]:text-[15px] max-[420px]:mt-6 max-[420px]:pl-4 max-[420px]:text-[14px] dark:text-[rgba(237,241,239,0.62)]">
+            <p className="mt-8 max-w-160 border-l-2 border-[#d28a22]/65 pl-5 text-[16px] leading-[1.7] text-[rgba(25,44,62,0.66)] max-[620px]:text-[15px] max-[420px]:mt-6 max-[420px]:pl-4 max-[420px]:text-[14px] dark:text-[rgba(237,241,239,0.62)]">
               {localize(TEXT.about.summary, language)}
             </p>
 
@@ -93,7 +93,7 @@ export function AboutSection() {
             aria-label={localize(TEXT.about.profileIndex, language)}
           >
             <div className="flex items-center justify-between border-b border-[rgba(25,44,62,0.1)] px-5 py-4 dark:border-white/9">
-              <span className="font-mono text-[9px] font-bold tracking-[0.14em] text-[rgba(25,44,62,0.46)] uppercase dark:text-white/40">
+              <span className="font-mono text-[9px] font-bold tracking-[0.14em] text-[rgba(25,44,62,0.66)] uppercase dark:text-white/50">
                 {localize(TEXT.about.profileIndex, language)}
               </span>
               <span className="size-2 rounded-full bg-[#f2a541] shadow-[0_0_0_4px_rgba(242,165,65,0.14)]" />
@@ -109,7 +109,7 @@ export function AboutSection() {
                 }`}
               >
                 <div className="mb-3 flex items-center justify-between">
-                  <span className="font-mono text-[9px] font-bold tracking-[0.12em] text-[rgba(25,44,62,0.43)] uppercase dark:text-white/38">
+                  <span className="font-mono text-[9px] font-bold tracking-[0.12em] text-[rgba(25,44,62,0.66)] uppercase dark:text-white/50">
                     {label}
                   </span>
                   <Icon size={14} className={accent} />

@@ -189,7 +189,7 @@ export function ProjectGallery({
           <PlaceholderCanvas variant={activePreview.variant} />
         )}
         <div className="pointer-events-none absolute inset-x-0 top-0 flex items-center justify-between bg-[linear-gradient(to_bottom,rgba(11,15,17,0.7),transparent)] px-3 py-2.5 text-white">
-          <span className="text-[8px] font-bold tracking-[0.12em] uppercase text-white/65">
+          <span className="text-[8px] font-bold tracking-[0.12em] uppercase text-white/85">
             {localize(
               activePreview.kind === "image"
                 ? TEXT.work.preview
@@ -198,7 +198,7 @@ export function ProjectGallery({
             )}
           </span>
           {previews.length > 1 && (
-            <span className="font-mono text-[8px] font-bold text-white/75">
+            <span className="font-mono text-[8px] font-bold text-white/90">
               {String(activeIndex + 1).padStart(2, "0")} / {String(previews.length).padStart(2, "0")}
             </span>
           )}
@@ -272,7 +272,7 @@ export function ProjectGallery({
                     <PlaceholderCanvas variant={preview.variant} />
                   )}
                 </span>
-                <span className="block truncate px-1 pt-1.5 pb-0.5 text-[8px] font-semibold text-[rgba(25,44,62,0.55)] dark:text-[rgba(237,241,239,0.56)]">
+                <span className="block truncate px-1 pt-1.5 pb-0.5 text-[8px] font-semibold text-[rgba(25,44,62,0.66)] dark:text-[rgba(237,241,239,0.56)]">
                   {label}
                 </span>
               </button>

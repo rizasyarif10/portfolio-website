@@ -22,21 +22,21 @@ export const NAVIGATION: readonly NavigationItem[] = [
   },
   {
     number: "02",
-    label: localized("Resume", "Karier"),
+    label: localized("Projects", "Proyek"),
+    href: "#projects",
+    icon: "work",
+  },
+  {
+    number: "03",
+    label: localized("Experience", "Pengalaman"),
     href: "#resume",
     icon: "resume",
   },
   {
-    number: "03",
+    number: "04",
     label: localized("Skills", "Keahlian"),
     href: "#skills",
     icon: "skills",
-  },
-  {
-    number: "04",
-    label: localized("Projects", "Proyek"),
-    href: "#projects",
-    icon: "work",
   },
   {
     number: "05",
@@ -100,26 +100,26 @@ export const CAREER_STATS: readonly CareerStat[] = [
 export const SERVICES: readonly Service[] = [
   {
     icon: "code",
-    title: localized("Frontend Engineering", "Rekayasa Frontend"),
+    title: localized("Frontend Development", "Pengembangan Frontend"),
     description: localized(
-      "Responsive React applications with maintainable architecture and clear interactions.",
-      "Aplikasi React responsif dengan arsitektur yang mudah dirawat dan interaksi yang jelas.",
+      "Web application features, reusable interfaces, and frontend state management.",
+      "Fitur aplikasi web, antarmuka yang dapat digunakan ulang, dan state management frontend.",
     ),
   },
   {
     icon: "layers",
     title: localized("Maps & Data Interfaces", "Antarmuka Peta & Data"),
     description: localized(
-      "Dashboards, MapLibre experiences, and visual tools for complex geospatial data.",
-      "Dashboard, pengalaman MapLibre, dan perangkat visual untuk data geospasial yang kompleks.",
+      "Dashboards, data visualizations, and interactive mapping features using MapLibre GL and Leaflet.js.",
+      "Dashboard, visualisasi data, dan fitur peta interaktif menggunakan MapLibre GL dan Leaflet.js.",
     ),
   },
   {
     icon: "quality",
     title: localized("Quality & Integration", "Kualitas & Integrasi"),
     description: localized(
-      "REST API integration, predictable data states, unit testing, and pragmatic refactoring.",
-      "Integrasi REST API, state data yang terprediksi, unit testing, dan refactoring yang pragmatis.",
+      "REST API integration, loading and error states, unit testing, debugging, and refactoring.",
+      "Integrasi REST API, loading dan error state, unit testing, debugging, dan refactoring.",
     ),
   },
 ];
@@ -450,8 +450,8 @@ export const EXPERIENCES: readonly Experience[] = [
     company: "PT Bhumi Varta Technology",
     role: localized("Frontend Engineer", "Frontend Engineer"),
     description: localized(
-      "Developing responsive products, dashboards, visualizations, and interactive maps for internal and client applications.",
-      "Mengembangkan produk responsif, dashboard, visualisasi, dan peta interaktif untuk aplikasi internal maupun klien.",
+      "Developing and maintaining web applications, dashboards, and data visualizations for internal products and client projects.",
+      "Mengembangkan dan merawat aplikasi web, dashboard, dan visualisasi data untuk produk internal dan proyek klien.",
     ),
     responsibilities: [
       localized(
@@ -590,12 +590,7 @@ export const SKILL_GROUPS: readonly SkillGroup[] = [
   },
   {
     label: localized("Maps & Geospatial", "Peta & Geospasial"),
-    items: [
-      "MapLibre GL",
-      "Leaflet.js",
-      "GeoJSON",
-      "H3.js",
-    ],
+    items: ["MapLibre GL", "Leaflet.js", "GeoJSON", "H3.js"],
   },
   {
     label: localized("Backend & Database", "Backend & Database"),
@@ -610,25 +605,14 @@ export const SKILL_GROUPS: readonly SkillGroup[] = [
   },
   {
     label: localized("Testing & Code Quality", "Testing & Kualitas Kode"),
-    items: [
-      "Jest",
-      "Vitest",
-      "MSW",
-      "ESLint",
-      "SonarQube",
-    ],
+    items: ["Jest", "Vitest", "MSW", "ESLint", "SonarQube"],
   },
   {
     label: localized(
       "Development & Monitoring Tools",
       "Tools Pengembangan & Monitoring",
     ),
-    items: [
-      "Git",
-      "npm",
-      "New Relic",
-      "Datadog",
-    ],
+    items: ["Git", "npm", "New Relic", "Datadog"],
   },
 ];
 
@@ -640,22 +624,22 @@ export const TEXT = {
       "Rancang · Bangun · Tingkatkan",
     ),
     headlineStart: localized(
-      "I build responsive web applications",
-      "Saya membangun aplikasi web responsif",
+      "Frontend Engineer developing web applications, dashboards, and data visualizations",
+      "Frontend Engineer yang mengembangkan aplikasi web, dashboard, dan visualisasi data",
     ),
     headlineEmphasis: localized(
-      "that simplify complex workflows and data.",
-      "yang menyederhanakan alur kerja dan data kompleks.",
+      "for product and business needs.",
+      "untuk kebutuhan produk dan bisnis.",
     ),
     headlineEnd: localized("", ""),
     summary: localized(
-      "Frontend Engineer with 7+ years of experience building maintainable web applications, dashboards, data visualizations, and interactive interfaces for real operational needs.",
-      "Frontend Engineer dengan pengalaman 7+ tahun membangun aplikasi web yang mudah dirawat, dashboard, visualisasi data, dan antarmuka interaktif untuk kebutuhan operasional nyata.",
+      "I have over 7 years of experience developing and maintaining web applications for internal products and client projects, with hands-on experience in feature development, REST API integration, state management, unit testing, and debugging.",
+      "Saya memiliki pengalaman lebih dari 7 tahun mengembangkan dan merawat aplikasi web untuk produk internal dan proyek klien, dengan pengalaman langsung dalam pengembangan fitur, integrasi REST API, state management, unit testing, dan debugging.",
     ),
     scroll: localized("Scroll to explore", "Scroll untuk menjelajah"),
     exploreWork: localized(
-      "Explore independent projects",
-      "Jelajahi proyek independen",
+      "Explore selected projects",
+      "Jelajahi proyek pilihan",
     ),
     profileIndex: localized("Professional Overview", "Ringkasan Profesional"),
     experienceLabel: localized("Experience", "Pengalaman"),
@@ -675,8 +659,8 @@ export const TEXT = {
   services: {
     title: localized("How I Contribute", "Cara Saya Berkontribusi"),
     note: localized(
-      "A focused mix of product thinking and frontend craft.",
-      "Perpaduan fokus produk dan keahlian frontend.",
+      "Key areas where I contribute across frontend development.",
+      "Area utama tempat saya berkontribusi dalam pengembangan frontend.",
     ),
   },
   work: {
@@ -727,10 +711,10 @@ export const TEXT = {
     ],
   },
   contact: {
-    title: localized("Get in Touch", "Hubungi Saya"),
+    title: localized("Let's Work Together", "Mari Bekerja Sama"),
     note: localized(
-      "Open to frontend, product, and mapping collaborations.",
-      "Terbuka untuk kolaborasi frontend, produk, dan pemetaan.",
+      "I am open to Frontend Engineer and Web Developer opportunities where I can contribute to building and improving web applications.",
+      "Saya terbuka untuk peluang sebagai Frontend Engineer dan Web Developer di mana saya dapat berkontribusi membangun dan meningkatkan aplikasi web.",
     ),
     based: localized("Based in", "Berdomisili di"),
     remote: localized(

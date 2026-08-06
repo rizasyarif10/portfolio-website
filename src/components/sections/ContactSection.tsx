@@ -46,7 +46,7 @@ export function ContactSection() {
       label: localize(TEXT.contact.streetLayer, language),
       icon: MapIcon,
       previewClass:
-        "text-[#657780] bg-[linear-gradient(35deg,transparent_43%,rgba(143,159,127,0.75)_44%_48%,transparent_49%),linear-gradient(145deg,#dbe8d0_0_38%,#d8e6ee_39%_62%,#eee8d9_63%)]",
+        "text-[#56666e] bg-[linear-gradient(35deg,transparent_43%,rgba(143,159,127,0.75)_44%_48%,transparent_49%),linear-gradient(145deg,#dbe8d0_0_38%,#d8e6ee_39%_62%,#eee8d9_63%)]",
     },
     {
       value: "satellite",
@@ -115,13 +115,13 @@ export function ContactSection() {
               <span className="grid size-8.5 place-items-center rounded-[10px] bg-[#8fb7ff]/12 text-[#b9d0ff]">
                 <Mail size={15} />
               </span>
-              <span className="min-w-0 text-[8px] font-bold tracking-widest text-white/42 uppercase">
+              <span className="min-w-0 text-[8px] font-bold tracking-widest text-white/50 uppercase">
                 {localize(TEXT.contact.email, language)}
                 <strong className="mt-1 block overflow-hidden text-[10px] font-semibold tracking-normal text-ellipsis whitespace-nowrap text-white normal-case">
                   {CONTACT.email}
                 </strong>
               </span>
-              <ArrowUpRight size={14} className="text-white/45 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white" />
+              <ArrowUpRight size={14} className="text-white/50 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white" />
             </a>
             <a
               className="group grid grid-cols-[34px_1fr_16px] items-center gap-2.5 rounded-[15px] border border-white/10 bg-white/5.5 p-3 transition-[border-color,background-color] duration-300 hover:border-[#8fb7ff]/35 hover:bg-white/10"
@@ -132,13 +132,13 @@ export function ContactSection() {
               <span className="grid size-8.5 place-items-center rounded-[10px] bg-[#8fb7ff]/12 text-[#b9d0ff]">
                 <WhatsAppIcon size={15} />
               </span>
-              <span className="min-w-0 text-[8px] font-bold tracking-widest text-white/42 uppercase">
+              <span className="min-w-0 text-[8px] font-bold tracking-widest text-white/50 uppercase">
                 {localize(TEXT.contact.phone, language)}
                 <strong className="mt-1 block overflow-hidden text-[10px] font-semibold tracking-normal text-ellipsis whitespace-nowrap text-white normal-case">
                   {CONTACT.phoneDisplay}
                 </strong>
               </span>
-              <ArrowUpRight size={14} className="text-white/45 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white" />
+              <ArrowUpRight size={14} className="text-white/50 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white" />
             </a>
           </div>
         </div>
@@ -146,7 +146,7 @@ export function ContactSection() {
         <div className="relative min-h-107.5 overflow-hidden max-[760px]:order-1 max-[760px]:min-h-72.5 max-[420px]:min-h-65">
           <Suspense
             fallback={
-              <div className="grid h-full place-items-center bg-[#dedbd2] text-xs font-semibold text-[rgba(25,44,62,0.5)] dark:bg-[#0c141c] dark:text-[rgba(237,241,239,0.5)]">
+              <div className="grid h-full place-items-center bg-[#dedbd2] text-xs font-semibold text-[rgba(25,44,62,0.66)] dark:bg-[#0c141c] dark:text-[rgba(237,241,239,0.5)]">
                 {localize(TEXT.contact.mapLoading, language)}
               </div>
             }
@@ -159,14 +159,14 @@ export function ContactSection() {
             />
           </Suspense>
           <div className="pointer-events-none absolute top-3 left-3 z-4 flex max-w-[calc(100%-70px)] items-center gap-2 rounded-[13px] border border-[rgba(25,44,62,0.12)] bg-white/90 px-3 py-2.5 text-[#192c3e] shadow-[0_8px_24px_rgba(25,44,62,0.14)] backdrop-blur-xl">
-            <span className="grid size-7 shrink-0 place-items-center rounded-[9px] bg-[#5874d8]/10 text-[#5874d8]">
+            <span className="grid size-7 shrink-0 place-items-center rounded-[9px] bg-[#5874d8]/10 text-[#4a63c4]">
               <MapPinned size={14} />
             </span>
             <span className="min-w-0">
               <strong className="block truncate text-[9px] font-bold">
                 {location} · Indonesia
               </strong>
-              <small className="mt-0.5 block truncate text-[8px] font-semibold tracking-[0.08em] text-[rgba(25,44,62,0.46)] uppercase">
+              <small className="mt-0.5 block truncate text-[8px] font-semibold tracking-[0.08em] text-[rgba(25,44,62,0.66)] uppercase">
                 MapLibre · {activeLayerLabel}
               </small>
             </span>
@@ -206,7 +206,7 @@ export function ContactSection() {
                       className={`flex min-h-12.25 w-13.5 cursor-pointer flex-col items-center justify-center gap-1.25 rounded-[11px] p-1 transition duration-150 max-[620px]:w-13 ${
                         baseLayer === layer.value
                           ? "bg-white text-[#192c3e] shadow-[inset_0_0_0_2px_#657780]"
-                          : "bg-transparent text-[rgba(25,44,62,0.58)] hover:bg-[rgba(25,44,62,0.06)] hover:text-[#192c3e]"
+                          : "bg-transparent text-[rgba(25,44,62,0.66)] hover:bg-[rgba(25,44,62,0.06)] hover:text-[#192c3e]"
                       }`}
                       onClick={() => setBaseLayer(layer.value)}
                       aria-pressed={baseLayer === layer.value}
@@ -223,7 +223,7 @@ export function ContactSection() {
           </div>
         </div>
       </div>
-      <footer className="mt-9 border-t border-[rgba(25,44,62,0.1)] pt-5 text-center font-mono text-[9px] tracking-[0.04em] text-[rgba(25,44,62,0.43)] dark:border-white/9 dark:text-[rgba(237,241,239,0.46)]">
+      <footer className="mt-9 border-t border-[rgba(25,44,62,0.1)] pt-5 text-center font-mono text-[9px] tracking-[0.04em] text-[rgba(25,44,62,0.66)] dark:border-white/9 dark:text-[rgba(237,241,239,0.5)]">
         © 2026 {PROFILE.name}
       </footer>
     </section>

@@ -17,7 +17,7 @@ export function ProjectsSection() {
       className="scroll-mt-0 border-b border-[rgba(25,44,62,0.12)] px-[clamp(38px,5vw,72px)] py-19 max-[620px]:px-6.25 max-[620px]:py-15.5 max-[420px]:px-4 max-[420px]:py-13 dark:border-white/11"
     >
       <SectionTitle
-        number="04"
+        number="02"
         title={localize(TEXT.work.title, language)}
         note={localize(TEXT.work.note, language)}
       />

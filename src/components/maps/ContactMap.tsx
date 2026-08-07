@@ -61,7 +61,7 @@ export function ContactMap({
   availabilityText,
   resetLabel,
   baseLayer,
-}: ContactMapProps) {
+}: Readonly<ContactMapProps>) {
   const containerRef = useRef<HTMLElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
   const markerElementRef = useRef<HTMLDivElement | null>(null);

@@ -697,10 +697,13 @@ export const TEXT = {
       "The tools I use to turn requirements into reliable interfaces.",
       "Tools yang saya gunakan untuk mengubah kebutuhan menjadi antarmuka yang andal.",
     ),
-    aiTitle: localized("AI-Assisted Workflow", "Alur Kerja Berbantuan AI"),
+    aiTitle: localized(
+      "AI-Assisted Development",
+      "Pengembangan Berbantuan AI",
+    ),
     aiDescription: localized(
-      "Using AI to accelerate planning, implementation, debugging, and code review while keeping technical decisions and final validation engineer-led.",
-      "Memanfaatkan AI untuk mempercepat perencanaan, implementasi, debugging, dan code review, dengan keputusan teknis serta validasi akhir tetap dikendalikan oleh engineer.",
+      "I use AI as a tool in my development process — to explore alternative solutions, speed up repetitive work, and get an early review of my code — while architecture, technical decisions, and final validation remain my responsibility.",
+      "Saya menggunakan AI sebagai alat bantu dalam proses pengembangan — untuk mengeksplorasi alternatif solusi, mempercepat pekerjaan yang berulang, dan mendapatkan review awal terhadap kode — sementara arsitektur, keputusan teknis, dan validasi akhir tetap menjadi tanggung jawab saya.",
     ),
     aiTools: localized("Tools", "Tools"),
     aiStages: [

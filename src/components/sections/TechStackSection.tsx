@@ -76,9 +76,14 @@ export function TechStackSection() {
           <span className="grid size-9 place-items-center rounded-xl bg-[#5874d8]/10 text-[#4a63c4] dark:bg-[#aebeff]/10 dark:text-[#aebeff]">
             <Bot size={17} strokeWidth={1.8} />
           </span>
-          <h3 className="text-[15px] font-bold tracking-[-0.02em]">
-            {localize(TEXT.skills.aiTitle, language)}
-          </h3>
+          <div className="flex flex-col">
+            <span className="block font-mono text-[8px] font-bold tracking-[0.13em] text-[#56666e] uppercase dark:text-[#b4c0a5]">
+              Anthropic AI Workflow
+            </span>
+            <h3 className="text-[15px] font-bold tracking-[-0.02em]">
+              {localize(TEXT.skills.aiTitle, language)}
+            </h3>
+          </div>
         </div>
 
         <article className="grid grid-cols-[minmax(0,1.25fr)_minmax(210px,0.75fr)] gap-5 rounded-[22px] border border-[rgba(25,44,62,0.11)] bg-white/40 p-5 transition-[transform,border-color,background-color,box-shadow] duration-420 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform hover:-translate-y-0.5 hover:border-[#5874d8]/25 hover:bg-white/65 hover:shadow-[0_16px_36px_rgba(25,44,62,0.07)] motion-reduce:transform-none motion-reduce:transition-none max-[720px]:grid-cols-1 max-[420px]:rounded-[18px] max-[420px]:p-4 dark:border-white/10 dark:bg-white/[0.035] dark:hover:border-[#aebeff]/25 dark:hover:bg-white/5.5 dark:hover:shadow-[0_16px_36px_rgba(0,0,0,0.14)]">
@@ -90,7 +95,7 @@ export function TechStackSection() {
               {localize(TEXT.skills.aiDescription, language)}
             </p>
             <div className="mt-4 flex flex-wrap gap-1.5">
-              {["Claude", "Claude Code", "GitHub Copilot"].map((tool) => (
+              {["Claude", "Claude Code"].map((tool) => (
                 <span
                   className="rounded-full border border-[#5874d8]/15 bg-[#5874d8]/6 px-2.5 py-1.5 text-[9px] font-semibold text-[#4b628f] dark:border-[#aebeff]/15 dark:bg-[#aebeff]/6 dark:text-[#cbd5ff]"
                   key={tool}
@@ -103,7 +108,7 @@ export function TechStackSection() {
 
           <div className="border-l border-[rgba(25,44,62,0.09)] pl-5 max-[720px]:border-t max-[720px]:border-l-0 max-[720px]:pt-5 max-[720px]:pl-0 dark:border-white/8">
             <span className="mb-3 block font-mono text-[8px] font-bold tracking-[0.13em] text-[#56666e] uppercase dark:text-[#b4c0a5]">
-              Workflow
+              Stages
             </span>
             <div className="grid grid-cols-2 gap-2">
               {TEXT.skills.aiStages.map((stage) => {

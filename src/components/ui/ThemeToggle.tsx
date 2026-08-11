@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
-import { TEXT } from "../../constants/portfolio";
-import { useLanguage } from "../../contexts/LanguageContext";
-import { localize } from "../../utils/localize";
+import { TEXT } from "@/constants/portfolio";
+import { useLanguage } from "@/hooks/useLanguage";
+import { localize } from "@/utils/localize";
 
 type Theme = "light" | "dark";
 

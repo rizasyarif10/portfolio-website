@@ -1,5 +1,5 @@
 import { BriefcaseBusiness, FileText, MessageCircle, UserRound, Wrench } from "lucide-react";
-import type { NavigationIcon as NavigationIconName } from "../../types/portfolio";
+import type { NavigationIcon as NavigationIconName } from "@/types/portfolio";
 
 const NAVIGATION_ICONS = {
   about: UserRound,

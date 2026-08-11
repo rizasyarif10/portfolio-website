@@ -1,9 +1,9 @@
 import { Code2, Layers3, TestTube2, type LucideIcon } from "lucide-react";
-import { SERVICES, TEXT } from "../../constants/portfolio";
-import { useLanguage } from "../../contexts/LanguageContext";
-import type { ServiceIcon } from "../../types/portfolio";
-import { localize } from "../../utils/localize";
-import { SectionTitle } from "../ui/SectionTitle";
+import { SectionTitle } from "@/components/ui/SectionTitle";
+import { SERVICES, TEXT } from "@/constants/portfolio";
+import { useLanguage } from "@/hooks/useLanguage";
+import type { ServiceIcon } from "@/types/portfolio";
+import { localize } from "@/utils/localize";
 
 const SERVICE_ICONS: Record<ServiceIcon, LucideIcon> = {
   code: Code2,
@@ -17,7 +17,6 @@ export function ServicesSection() {
   return (
     <section className="scroll-mt-0 border-b border-[rgba(25,44,62,0.12)] px-[clamp(38px,5vw,72px)] py-19 max-[620px]:px-6.25 max-[620px]:py-15.5 max-[420px]:px-4 max-[420px]:py-13 dark:border-white/11">
       <SectionTitle
-        number="01"
         title={localize(TEXT.services.title, language)}
         note={localize(TEXT.services.note, language)}
       />

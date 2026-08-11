@@ -1,8 +1,8 @@
 import { ArrowUpRight } from "lucide-react";
-import { TEXT } from "../../constants/portfolio";
-import type { Language, Project } from "../../types/portfolio";
-import { localize } from "../../utils/localize";
-import { ProjectGallery } from "./ProjectGallery";
+import { ProjectGallery } from "@/components/projects/ProjectGallery";
+import { TEXT } from "@/constants/portfolio";
+import type { Language, Project } from "@/types/portfolio";
+import { localize } from "@/utils/localize";
 
 type ProjectShowcaseCardProps = {
   readonly project: Project;

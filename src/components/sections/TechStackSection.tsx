@@ -6,18 +6,20 @@ import {
   Code2,
   Database,
   Map,
+  Palette,
   PanelsTopLeft,
 } from "lucide-react";
-import { SKILL_GROUPS, TEXT } from "../../constants/portfolio";
-import { useLanguage } from "../../contexts/LanguageContext";
-import { localize } from "../../utils/localize";
-import { SectionTitle } from "../ui/SectionTitle";
+import { SectionTitle } from "@/components/ui/SectionTitle";
+import { SKILL_GROUPS, TEXT } from "@/constants/portfolio";
+import { useLanguage } from "@/hooks/useLanguage";
+import { localize } from "@/utils/localize";
 
 export function TechStackSection() {
   const { language } = useLanguage();
   const groupIcons = [
     Code2,
     PanelsTopLeft,
+    Palette,
     Map,
     Database,
     BadgeCheck,
@@ -42,7 +44,12 @@ export function TechStackSection() {
           return (
             <article
               key={label}
-              className="rounded-[22px] border border-[rgba(25,44,62,0.11)] bg-white/40 p-5 transition-[transform,border-color,background-color,box-shadow] duration-420 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform hover:-translate-y-0.5 hover:border-[#5874d8]/25 hover:bg-white/65 hover:shadow-[0_16px_36px_rgba(25,44,62,0.07)] motion-reduce:transform-none motion-reduce:transition-none max-[420px]:rounded-[18px] max-[420px]:p-4 dark:border-white/10 dark:bg-white/[0.035] dark:hover:border-[#aebeff]/25 dark:hover:bg-white/5.5 dark:hover:shadow-[0_16px_36px_rgba(0,0,0,0.14)]"
+              className={`rounded-[22px] border border-[rgba(25,44,62,0.11)] bg-white/40 p-5 transition-[transform,border-color,background-color,box-shadow] duration-420 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform hover:-translate-y-0.5 hover:border-[#5874d8]/25 hover:bg-white/65 hover:shadow-[0_16px_36px_rgba(25,44,62,0.07)] motion-reduce:transform-none motion-reduce:transition-none max-[720px]:col-span-1 max-[420px]:rounded-[18px] max-[420px]:p-4 dark:border-white/10 dark:bg-white/[0.035] dark:hover:border-[#aebeff]/25 dark:hover:bg-white/5.5 dark:hover:shadow-[0_16px_36px_rgba(0,0,0,0.14)] ${
+                index === SKILL_GROUPS.length - 1 &&
+                SKILL_GROUPS.length % 2 === 1
+                  ? "col-span-2"
+                  : ""
+              }`}
             >
               <div className="mb-5 flex items-center justify-between border-b border-[rgba(25,44,62,0.09)] pb-4 dark:border-white/8">
                 <div className="flex items-center gap-2.5">
@@ -78,7 +85,7 @@ export function TechStackSection() {
           </span>
           <div className="flex flex-col">
             <span className="block font-mono text-[8px] font-bold tracking-[0.13em] text-[#56666e] uppercase dark:text-[#b4c0a5]">
-              Anthropic AI Workflow
+              {localize(TEXT.skills.aiEyebrow, language)}
             </span>
             <h3 className="text-[15px] font-bold tracking-[-0.02em]">
               {localize(TEXT.skills.aiTitle, language)}
@@ -108,7 +115,7 @@ export function TechStackSection() {
 
           <div className="border-l border-[rgba(25,44,62,0.09)] pl-5 max-[720px]:border-t max-[720px]:border-l-0 max-[720px]:pt-5 max-[720px]:pl-0 dark:border-white/8">
             <span className="mb-3 block font-mono text-[8px] font-bold tracking-[0.13em] text-[#56666e] uppercase dark:text-[#b4c0a5]">
-              Stages
+              {localize(TEXT.skills.aiStagesLabel, language)}
             </span>
             <div className="grid grid-cols-2 gap-2">
               {TEXT.skills.aiStages.map((stage) => {

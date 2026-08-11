@@ -8,7 +8,7 @@ import {
   type Map as MapLibreMap,
   type StyleSpecification,
 } from "maplibre-gl";
-import type { BaseMapLayer } from "../../types/map";
+import type { BaseMapLayer } from "@/types/map";
 
 const SOUTH_TANGERANG: [number, number] = [106.7457983, -6.3115675];
 const INITIAL_ZOOM = 9.7;
@@ -66,6 +66,7 @@ export function ContactMap({
   const mapRef = useRef<MapLibreMap | null>(null);
   const markerElementRef = useRef<HTMLDivElement | null>(null);
   const popupRef = useRef<Popup | null>(null);
+  const initialBaseLayerRef = useRef(baseLayer);
   const [zoomLevel, setZoomLevel] = useState(INITIAL_ZOOM);
 
   useEffect(() => {
@@ -73,7 +74,7 @@ export function ContactMap({
 
     const map = new Map({
       container: containerRef.current,
-      style: createMapStyle(baseLayer),
+      style: createMapStyle(initialBaseLayerRef.current),
       center: SOUTH_TANGERANG,
       zoom: INITIAL_ZOOM,
       minZoom: 3,
@@ -196,7 +197,13 @@ export function ContactMap({
   };
 
   return (
-    <div className="relative h-full w-full">
+    <div
+      className={`relative h-full w-full ${
+        baseLayer === "light"
+          ? "dark:[&_.maplibregl-canvas]:brightness-[0.62] dark:[&_.maplibregl-canvas]:contrast-[1.08] dark:[&_.maplibregl-canvas]:invert dark:[&_.maplibregl-canvas]:hue-rotate-180"
+          : ""
+      }`}
+    >
       <section
         ref={containerRef}
         className="h-full w-full"

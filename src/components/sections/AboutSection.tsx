@@ -5,10 +5,10 @@ import {
   LayoutDashboard,
   Map,
 } from "lucide-react";
-import { CAREER_STATS, TEXT } from "../../constants/portfolio";
-import { useLanguage } from "../../contexts/LanguageContext";
-import { localize } from "../../utils/localize";
-import { navigateToSection } from "../../utils/smoothScroll";
+import { CAREER_STATS, TEXT } from "@/constants/portfolio";
+import { useLanguage } from "@/hooks/useLanguage";
+import { localize } from "@/utils/localize";
+import { navigateToSection } from "@/utils/smoothScroll";
 
 export function AboutSection() {
   const { language } = useLanguage();
@@ -29,7 +29,7 @@ export function AboutSection() {
     {
       icon: Braces,
       label: localize(TEXT.about.stackLabel, language),
-      value: "React · TypeScript · Vite",
+      value: "React.js · TypeScript · Vite",
       accent: "text-[#d28a22] dark:text-[#f2b85c]",
     },
     {
@@ -65,7 +65,7 @@ export function AboutSection() {
           </span>
         </div>
 
-        <div className="grid grid-cols-[minmax(0,1.4fr)_minmax(215px,0.6fr)] gap-[clamp(28px,4vw,52px)] max-[720px]:grid-cols-1 max-[720px]:gap-10">
+        <div className="grid grid-cols-[minmax(0,1.4fr)_minmax(215px,0.6fr)] gap-[clamp(28px,4vw,52px)] max-[1024px]:grid-cols-1 max-[1024px]:gap-10">
           <div className="flex flex-col items-start">
             <h1 className="max-w-190 text-[clamp(34px,3.4vw,46px)] leading-[1.08] font-bold tracking-[-0.045em] max-[620px]:text-[32px] max-[420px]:text-[28px]">
               {localize(TEXT.about.headlineStart, language)}{" "}

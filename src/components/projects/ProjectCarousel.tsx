@@ -5,10 +5,10 @@ import {
   FolderOpen,
 } from "lucide-react";
 import { useRef, useState } from "react";
-import { TEXT } from "../../constants/portfolio";
-import type { Language, Project } from "../../types/portfolio";
-import { localize } from "../../utils/localize";
-import { ProjectShowcaseCard } from "./ProjectShowcaseCard";
+import { TEXT } from "@/constants/portfolio";
+import type { Language, Project } from "@/types/portfolio";
+import { localize } from "@/utils/localize";
+import { ProjectShowcaseCard } from "@/components/projects/ProjectShowcaseCard";
 
 type ProjectCarouselProps = {
   readonly projects: readonly Project[];

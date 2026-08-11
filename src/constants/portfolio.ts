@@ -9,7 +9,7 @@ import type {
   Project,
   Service,
   SkillGroup,
-} from "../types/portfolio";
+} from "@/types/portfolio";
 
 const localized = (en: string, id: string): LocalizedText => ({ en, id });
 
@@ -75,7 +75,7 @@ export const CONTACT: ContactDetails = {
 
 export const CAREER_STATS: readonly CareerStat[] = [
   {
-    value: "7+",
+    value: "8+",
     lines: [
       localized("Years of", "Tahun"),
       localized("experience", "pengalaman"),
@@ -134,7 +134,7 @@ export const PROFESSIONAL_PROJECTS: readonly Project[] = [
       "Produk location intelligence untuk menjalankan analisis spasial, menggabungkan berbagai dataset, serta meninjau insight dan laporan berbasis peta.",
     ),
     stack: [
-      "React",
+      "React.js",
       "Vitest",
       "Redux Persist",
       "LocalForage",
@@ -175,7 +175,7 @@ export const PROFESSIONAL_PROJECTS: readonly Project[] = [
       "Aplikasi web yang dapat dikonfigurasi untuk mengelola site, form, master data, pengguna, dan dashboard operasional.",
     ),
     stack: [
-      "React",
+      "React.js",
       "TypeScript",
       "TanStack Query",
       "Vite",
@@ -261,7 +261,7 @@ export const PROFESSIONAL_PROJECTS: readonly Project[] = [
       "Next.js",
       "TypeScript",
       "MapLibre GL",
-      "H3",
+      "H3.js",
       "Jest",
       "Tailwind CSS",
     ],
@@ -304,7 +304,7 @@ export const PROFESSIONAL_PROJECTS: readonly Project[] = [
       "Node.js",
       "Express.js",
       "JavaScript",
-      "Leaflet",
+      "Leaflet.js",
       "Chart.js",
     ],
     previews: [
@@ -374,7 +374,7 @@ export const PROFESSIONAL_PROJECTS: readonly Project[] = [
       "Node.js",
       "Express.js",
       "JavaScript",
-      "Leaflet",
+      "Leaflet.js",
       "Chart.js",
     ],
     previews: [
@@ -406,7 +406,7 @@ export const INDEPENDENT_PROJECTS: readonly Project[] = [
       "Livestock monitoring and operational data management in one web application.",
       "Pemantauan ternak dan pengelolaan data operasional dalam satu aplikasi web.",
     ),
-    stack: ["Next.js", "Tailwind", "Redux Toolkit"],
+    stack: ["Next.js", "Tailwind CSS", "Redux Toolkit", "Ant Design"],
     previews: [
       {
         kind: "image",
@@ -423,7 +423,7 @@ export const INDEPENDENT_PROJECTS: readonly Project[] = [
       "A responsive company profile that presents consultancy work with a clean visual rhythm.",
       "Profil perusahaan responsif yang menampilkan karya konsultansi dengan susunan visual yang bersih.",
     ),
-    stack: ["React", "Vite", "TypeScript"],
+    stack: ["React.js", "Vite", "TypeScript", "Tailwind CSS", "Ant Design"],
     previews: [
       {
         kind: "image",
@@ -446,25 +446,28 @@ export const INDEPENDENT_PROJECTS: readonly Project[] = [
 
 export const EXPERIENCES: readonly Experience[] = [
   {
-    period: localized("2018 — Present", "2018 — Sekarang"),
+    period: localized("Nov 2018 — Present", "Nov 2018 — Sekarang"),
     company: "PT Bhumi Varta Technology",
-    role: localized("Frontend Engineer", "Frontend Engineer"),
+    role: localized(
+      "Frontend Engineer (Web Application)",
+      "Frontend Engineer (Aplikasi Web)",
+    ),
     description: localized(
       "Developing and maintaining web applications, dashboards, and data visualizations for internal products and client projects.",
       "Mengembangkan dan merawat aplikasi web, dashboard, dan visualisasi data untuk produk internal dan proyek klien.",
     ),
     responsibilities: [
       localized(
-        "Develop and maintain responsive web applications using React, Next.js, TypeScript, and JavaScript.",
-        "Mengembangkan dan merawat aplikasi web responsif menggunakan React, Next.js, TypeScript, dan JavaScript.",
+        "Develop and maintain web applications for internal products and client projects using React.js, Next.js, TypeScript, and JavaScript.",
+        "Mengembangkan dan merawat aplikasi web untuk produk internal dan proyek klien menggunakan React.js, Next.js, TypeScript, dan JavaScript.",
       ),
       localized(
         "Contribute to frontend architecture with Redux Toolkit, Zustand, and TanStack Query.",
         "Berkontribusi pada arsitektur frontend dengan Redux Toolkit, Zustand, dan TanStack Query.",
       ),
       localized(
-        "Build dashboards, data visualizations, and interactive mapping features with MapLibre GL and Leaflet.",
-        "Membangun dashboard, visualisasi data, dan fitur peta interaktif dengan MapLibre GL dan Leaflet.",
+        "Build dashboards, data visualizations, and interactive mapping features with MapLibre GL and Leaflet.js.",
+        "Membangun dashboard, visualisasi data, dan fitur peta interaktif dengan MapLibre GL dan Leaflet.js.",
       ),
       localized(
         "Integrate REST APIs, create unit tests, debug and refactor code, and collaborate with cross-functional Agile teams.",
@@ -508,8 +511,11 @@ export const EXPERIENCES: readonly Experience[] = [
   },
   {
     period: localized("Jan — Oct 2018", "Jan — Okt 2018"),
-    company: "PT Infomedia Solusi Humanika",
-    role: localized("IT Support · NCC 119", "IT Support · NCC 119"),
+    company: "PT Infomedia Solusi Humanika (ISH)",
+    role: localized(
+      "IT Support · NCC 119 · Ministry of Health of the Republic of Indonesia",
+      "IT Support · NCC 119 · Kementerian Kesehatan Republik Indonesia",
+    ),
     description: localized(
       "Built an emergency contact directory and supported reporting and infrastructure for the national 119 service.",
       "Membangun direktori kontak darurat serta mendukung pelaporan dan infrastruktur layanan nasional 119.",
@@ -568,19 +574,27 @@ export const SKILL_GROUPS: readonly SkillGroup[] = [
       "React.js",
       "Next.js",
       "Vite",
-      "jQuery",
-      "EJS",
       "HTML5",
       "CSS3",
+      "jQuery",
+      "EJS",
     ],
   },
   {
-    label: localized("State Management & UI", "Manajemen State & UI"),
+    label: localized(
+      "State Management & Data Fetching",
+      "Manajemen State & Data Fetching",
+    ),
     items: [
       "Redux Toolkit",
       "Redux Persist",
       "Zustand",
       "TanStack Query",
+    ],
+  },
+  {
+    label: localized("UI & Styling", "UI & Styling"),
+    items: [
       "Tailwind CSS",
       "Bootstrap",
       "Material UI",
@@ -593,7 +607,10 @@ export const SKILL_GROUPS: readonly SkillGroup[] = [
     items: ["MapLibre GL", "Leaflet.js", "GeoJSON", "H3.js"],
   },
   {
-    label: localized("Backend & Database", "Backend & Database"),
+    label: localized(
+      "Backend, APIs & Database",
+      "Backend, API & Database",
+    ),
     items: [
       "Node.js",
       "Express.js",
@@ -608,10 +625,7 @@ export const SKILL_GROUPS: readonly SkillGroup[] = [
     items: ["Jest", "Vitest", "MSW", "ESLint", "SonarQube"],
   },
   {
-    label: localized(
-      "Development & Monitoring Tools",
-      "Tools Pengembangan & Monitoring",
-    ),
+    label: localized("Tools & Monitoring", "Tools & Monitoring"),
     items: ["Git", "npm", "New Relic", "Datadog"],
   },
 ];
@@ -633,8 +647,8 @@ export const TEXT = {
     ),
     headlineEnd: localized("", ""),
     summary: localized(
-      "I have over 7 years of experience developing and maintaining web applications for internal products and client projects, with hands-on experience in feature development, REST API integration, state management, unit testing, and debugging.",
-      "Saya memiliki pengalaman lebih dari 7 tahun mengembangkan dan merawat aplikasi web untuk produk internal dan proyek klien, dengan pengalaman langsung dalam pengembangan fitur, integrasi REST API, state management, unit testing, dan debugging.",
+      "I have over 8 years of professional experience developing and maintaining web applications for internal products and client projects, with hands-on experience in feature development, REST API integration, state management, unit testing, and debugging.",
+      "Saya memiliki lebih dari 8 tahun pengalaman profesional dalam mengembangkan dan merawat aplikasi web untuk produk internal dan proyek klien, dengan pengalaman langsung dalam pengembangan fitur, integrasi REST API, state management, unit testing, dan debugging.",
     ),
     scroll: localized("Scroll to explore", "Scroll untuk menjelajah"),
     exploreWork: localized(
@@ -679,12 +693,12 @@ export const TEXT = {
     nextProject: localized("Next project", "Proyek berikutnya"),
   },
   resume: {
-    title: localized("Resume", "Perjalanan karier"),
+    title: localized("Professional Experience", "Pengalaman Profesional"),
     note: localized(
       "A career built by shipping, maintaining, and improving real products.",
       "Karier yang dibangun dengan merilis, merawat, dan meningkatkan produk nyata.",
     ),
-    experience: localized("Experience", "Pengalaman"),
+    experience: localized("Career History", "Riwayat Karier"),
     selectedProjects: localized(
       "Products & Client Applications",
       "Produk & Aplikasi Klien",
@@ -697,15 +711,14 @@ export const TEXT = {
       "The tools I use to turn requirements into reliable interfaces.",
       "Tools yang saya gunakan untuk mengubah kebutuhan menjadi antarmuka yang andal.",
     ),
-    aiTitle: localized(
-      "AI-Assisted Development",
-      "Pengembangan Berbantuan AI",
-    ),
+    aiEyebrow: localized("AI Workflow", "Alur Kerja AI"),
+    aiTitle: localized("AI-Assisted Development", "Pengembangan Berbantuan AI"),
     aiDescription: localized(
       "I use AI as a tool in my development process — to explore alternative solutions, speed up repetitive work, and get an early review of my code — while architecture, technical decisions, and final validation remain my responsibility.",
       "Saya menggunakan AI sebagai alat bantu dalam proses pengembangan — untuk mengeksplorasi alternatif solusi, mempercepat pekerjaan yang berulang, dan mendapatkan review awal terhadap kode — sementara arsitektur, keputusan teknis, dan validasi akhir tetap menjadi tanggung jawab saya.",
     ),
-    aiTools: localized("Tools", "Tools"),
+    aiTools: localized("Tools", "Alat"),
+    aiStagesLabel: localized("Stages", "Tahapan"),
     aiStages: [
       localized("Planning", "Perencanaan"),
       localized("Implementation", "Implementasi"),
@@ -739,7 +752,6 @@ export const TEXT = {
   },
   profile: {
     previewCv: localized("Preview CV", "Lihat CV"),
-    views: localized("profile visits", "kunjungan profil"),
   },
   pdf: {
     preview: localized("Document preview", "Pratinjau dokumen"),

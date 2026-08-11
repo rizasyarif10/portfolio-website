@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Download, FileText, X } from "lucide-react";
-import { TEXT } from "../../constants/portfolio";
-import { useLanguage } from "../../contexts/LanguageContext";
-import { localize } from "../../utils/localize";
+import { TEXT } from "@/constants/portfolio";
+import { useLanguage } from "@/hooks/useLanguage";
+import { localize } from "@/utils/localize";
 
 type PdfPreviewModalProps = {
   fileUrl: string;

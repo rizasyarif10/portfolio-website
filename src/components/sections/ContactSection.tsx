@@ -9,15 +9,15 @@ import {
   SunMedium,
   type LucideIcon,
 } from "lucide-react";
-import { CONTACT, PROFILE, TEXT } from "../../constants/portfolio";
-import { useLanguage } from "../../contexts/LanguageContext";
-import type { BaseMapLayer } from "../../types/map";
-import { localize } from "../../utils/localize";
-import { SectionTitle } from "../ui/SectionTitle";
-import { WhatsAppIcon } from "../ui/WhatsAppIcon";
+import { SectionTitle } from "@/components/ui/SectionTitle";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
+import { CONTACT, PROFILE, TEXT } from "@/constants/portfolio";
+import { useLanguage } from "@/hooks/useLanguage";
+import type { BaseMapLayer } from "@/types/map";
+import { localize } from "@/utils/localize";
 
 const ContactMap = lazy(() =>
-  import("../maps/ContactMap").then((module) => ({
+  import("@/components/maps/ContactMap").then((module) => ({
     default: module.ContactMap,
   })),
 );
@@ -75,14 +75,17 @@ export function ContactSection() {
   }, [isLayerMenuOpen]);
 
   return (
-    <section id="contact" className="scroll-mt-0 border-b border-[rgba(25,44,62,0.12)] px-[clamp(38px,5vw,72px)] py-19 max-[620px]:px-6.25 max-[620px]:py-15.5 max-[420px]:px-4 max-[420px]:py-13 dark:border-white/11">
+    <section
+      id="contact"
+      className="scroll-mt-0 border-b border-[rgba(25,44,62,0.12)] px-[clamp(38px,5vw,72px)] py-19 max-[620px]:px-6.25 max-[620px]:py-15.5 max-[420px]:px-4 max-[420px]:py-13 dark:border-white/11"
+    >
       <SectionTitle
         number="05"
         title={localize(TEXT.contact.title, language)}
         note={localize(TEXT.contact.note, language)}
       />
-      <div className="grid min-h-107.5 grid-cols-[minmax(235px,0.72fr)_minmax(0,1.45fr)] overflow-hidden rounded-[28px] border border-[rgba(25,44,62,0.13)] bg-white/45 shadow-[0_22px_55px_rgba(25,44,62,0.08)] max-[760px]:grid-cols-1 max-[420px]:rounded-[22px] dark:border-[#8fb7ff]/15 dark:bg-white/[0.035] dark:shadow-[0_24px_60px_rgba(2,8,18,0.28)]">
-        <div className="relative flex min-h-0 flex-col overflow-hidden bg-[#192c3e] p-6 text-white max-[900px]:p-5 max-[760px]:order-2 max-[760px]:min-h-0 max-[420px]:p-4 dark:bg-[#071727]">
+      <div className="grid min-h-107.5 grid-cols-[minmax(260px,0.82fr)_minmax(0,1.35fr)] overflow-hidden rounded-[28px] border border-[rgba(25,44,62,0.13)] bg-white/45 shadow-[0_22px_55px_rgba(25,44,62,0.08)] max-[1024px]:grid-cols-1 max-[420px]:rounded-[22px] dark:border-[#8fb7ff]/15 dark:bg-white/[0.035] dark:shadow-[0_24px_60px_rgba(2,8,18,0.28)]">
+        <div className="relative flex min-h-0 flex-col overflow-hidden bg-[#192c3e] p-6 text-white max-[1024px]:order-2 max-[1024px]:min-h-0 max-[900px]:p-5 max-[420px]:p-4 dark:bg-[#071727]">
           <span
             aria-hidden="true"
             className="pointer-events-none absolute -top-24 -right-24 size-64 rounded-full border border-[#8fb7ff]/15 bg-[radial-gradient(circle,rgba(88,116,216,0.24),transparent_65%)]"
@@ -107,7 +110,7 @@ export function ContactSection() {
             </p>
           </div>
 
-          <div className="relative z-1 mt-auto grid grid-cols-1 gap-2 pt-7 max-[760px]:grid-cols-2 max-[420px]:grid-cols-1">
+          <div className="relative z-1 mt-auto grid grid-cols-1 gap-2 pt-7">
             <a
               className="group grid grid-cols-[34px_1fr_16px] items-center gap-2.5 rounded-[15px] border border-white/10 bg-white/5.5 p-3 transition-[border-color,background-color] duration-300 hover:border-[#8fb7ff]/35 hover:bg-white/10"
               href={`mailto:${CONTACT.email}`}
@@ -117,11 +120,14 @@ export function ContactSection() {
               </span>
               <span className="min-w-0 text-[8px] font-bold tracking-widest text-white/50 uppercase">
                 {localize(TEXT.contact.email, language)}
-                <strong className="mt-1 block overflow-hidden text-[10px] font-semibold tracking-normal text-ellipsis whitespace-nowrap text-white normal-case">
+                <strong className="mt-1 block break-all text-[10px] leading-[1.35] font-semibold tracking-normal text-white normal-case">
                   {CONTACT.email}
                 </strong>
               </span>
-              <ArrowUpRight size={14} className="text-white/50 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white" />
+              <ArrowUpRight
+                size={14}
+                className="text-white/50 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white"
+              />
             </a>
             <a
               className="group grid grid-cols-[34px_1fr_16px] items-center gap-2.5 rounded-[15px] border border-white/10 bg-white/5.5 p-3 transition-[border-color,background-color] duration-300 hover:border-[#8fb7ff]/35 hover:bg-white/10"
@@ -134,16 +140,19 @@ export function ContactSection() {
               </span>
               <span className="min-w-0 text-[8px] font-bold tracking-widest text-white/50 uppercase">
                 {localize(TEXT.contact.phone, language)}
-                <strong className="mt-1 block overflow-hidden text-[10px] font-semibold tracking-normal text-ellipsis whitespace-nowrap text-white normal-case">
+                <strong className="mt-1 block break-all text-[10px] leading-[1.35] font-semibold tracking-normal text-white normal-case">
                   {CONTACT.phoneDisplay}
                 </strong>
               </span>
-              <ArrowUpRight size={14} className="text-white/50 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white" />
+              <ArrowUpRight
+                size={14}
+                className="text-white/50 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white"
+              />
             </a>
           </div>
         </div>
 
-        <div className="relative min-h-107.5 overflow-hidden max-[760px]:order-1 max-[760px]:min-h-72.5 max-[420px]:min-h-65">
+        <div className="relative min-h-107.5 overflow-hidden max-[1024px]:order-1 max-[1024px]:min-h-72.5 max-[420px]:min-h-65">
           <Suspense
             fallback={
               <div className="grid h-full place-items-center bg-[#dedbd2] text-xs font-semibold text-[rgba(25,44,62,0.66)] dark:bg-[#0c141c] dark:text-[rgba(237,241,239,0.5)]">
@@ -190,12 +199,13 @@ export function ContactSection() {
               <Layers3 size={19} />
             </button>
             {isLayerMenuOpen && (
-              <div
+              <fieldset
                 id="map-layer-options"
-                className="flex gap-0.75 rounded-2xl border border-[rgba(25,44,62,0.12)] bg-white/90 p-1.25 shadow-[0_10px_30px_rgba(25,44,62,0.24)] backdrop-blur-xl animate-[map-layer-enter_160ms_ease-out]"
-                role="group"
-                aria-label={localize(TEXT.contact.layerSelector, language)}
+                className="flex min-w-0 gap-0.75 rounded-2xl border border-[rgba(25,44,62,0.12)] bg-white/90 p-1.25 shadow-[0_10px_30px_rgba(25,44,62,0.24)] backdrop-blur-xl animate-[map-layer-enter_160ms_ease-out]"
               >
+                <legend className="sr-only">
+                  {localize(TEXT.contact.layerSelector, language)}
+                </legend>
                 {mapLayers.map((layer) => {
                   const Icon = layer.icon;
                   return (
@@ -211,14 +221,18 @@ export function ContactSection() {
                       onClick={() => setBaseLayer(layer.value)}
                       aria-pressed={baseLayer === layer.value}
                     >
-                      <span className={`grid h-6.25 w-11 place-items-center overflow-hidden rounded-lg ${layer.previewClass}`}>
+                      <span
+                        className={`grid h-6.25 w-11 place-items-center overflow-hidden rounded-lg ${layer.previewClass}`}
+                      >
                         <Icon size={17} />
                       </span>
-                      <small className="max-w-full overflow-hidden text-[8px] leading-none font-bold text-ellipsis whitespace-nowrap">{layer.label}</small>
+                      <small className="max-w-full overflow-hidden text-[8px] leading-none font-bold text-ellipsis whitespace-nowrap">
+                        {layer.label}
+                      </small>
                     </button>
                   );
                 })}
-              </div>
+              </fieldset>
             )}
           </div>
         </div>

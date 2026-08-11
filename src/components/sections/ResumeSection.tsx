@@ -1,8 +1,8 @@
 import { BriefcaseBusiness, GraduationCap } from "lucide-react";
-import { EDUCATION, EXPERIENCES, TEXT } from "../../constants/portfolio";
-import { useLanguage } from "../../contexts/LanguageContext";
-import { localize } from "../../utils/localize";
-import { SectionTitle } from "../ui/SectionTitle";
+import { SectionTitle } from "@/components/ui/SectionTitle";
+import { EDUCATION, EXPERIENCES, TEXT } from "@/constants/portfolio";
+import { useLanguage } from "@/hooks/useLanguage";
+import { localize } from "@/utils/localize";
 
 export function ResumeSection() {
   const { language } = useLanguage();

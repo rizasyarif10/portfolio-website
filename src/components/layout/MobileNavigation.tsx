@@ -1,8 +1,8 @@
-import { NAVIGATION } from "../../constants/portfolio";
-import { useLanguage } from "../../contexts/LanguageContext";
-import { localize } from "../../utils/localize";
-import { navigateToSection } from "../../utils/smoothScroll";
-import { NavigationIcon } from "../ui/NavigationIcon";
+import { NavigationIcon } from "@/components/ui/NavigationIcon";
+import { NAVIGATION } from "@/constants/portfolio";
+import { useLanguage } from "@/hooks/useLanguage";
+import { localize } from "@/utils/localize";
+import { navigateToSection } from "@/utils/smoothScroll";
 
 export function MobileNavigation() {
   const { language } = useLanguage();

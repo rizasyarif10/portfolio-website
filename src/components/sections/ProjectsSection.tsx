@@ -2,11 +2,11 @@ import {
   INDEPENDENT_PROJECTS,
   PROFESSIONAL_PROJECTS,
   TEXT,
-} from "../../constants/portfolio";
-import { useLanguage } from "../../contexts/LanguageContext";
-import { localize } from "../../utils/localize";
-import { ProjectCarousel } from "../projects/ProjectCarousel";
-import { SectionTitle } from "../ui/SectionTitle";
+} from "@/constants/portfolio";
+import { ProjectCarousel } from "@/components/projects/ProjectCarousel";
+import { SectionTitle } from "@/components/ui/SectionTitle";
+import { useLanguage } from "@/hooks/useLanguage";
+import { localize } from "@/utils/localize";
 
 export function ProjectsSection() {
   const { language } = useLanguage();

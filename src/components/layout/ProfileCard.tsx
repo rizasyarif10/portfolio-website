@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { BriefcaseBusiness, Eye, GitFork, MapPin } from "lucide-react";
-import { CONTACT, PROFILE, TEXT } from "../../constants/portfolio";
-import { useLanguage } from "../../contexts/LanguageContext";
-import { localize } from "../../utils/localize";
-import { LanguageToggle } from "../ui/LanguageToggle";
-import { PdfPreviewModal } from "../ui/PdfPreviewModal";
-import { ProfileViewCounter } from "../ui/ProfileViewCounter";
-import { ThemeToggle } from "../ui/ThemeToggle";
-import { WhatsAppIcon } from "../ui/WhatsAppIcon";
+import { LanguageToggle } from "@/components/ui/LanguageToggle";
+import { PdfPreviewModal } from "@/components/ui/PdfPreviewModal";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
+import { CONTACT, PROFILE, TEXT } from "@/constants/portfolio";
+import { useLanguage } from "@/hooks/useLanguage";
+import { localize } from "@/utils/localize";
 
 export function ProfileCard() {
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
@@ -63,7 +62,6 @@ export function ProfileCard() {
           <p className="mt-4.25 flex items-center gap-1.75 text-[11px] text-white/80 max-[420px]:text-[10px]">
             <MapPin size={15} /> {localize(PROFILE.location, language)} · {PROFILE.timezone}
           </p>
-          <ProfileViewCounter />
           <div className="mt-6 flex gap-2 max-[420px]:mt-5">
             <a className="grid size-10 place-items-center rounded-full border border-white/20 transition duration-200 hover:bg-[#f7f5ee] hover:text-[#192c3e]" href={PROFILE.linkedIn} target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn"><BriefcaseBusiness size={18} /></a>
             <a className="grid size-10 place-items-center rounded-full border border-white/20 transition duration-200 hover:bg-[#f7f5ee] hover:text-[#192c3e]" href={PROFILE.github} target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub"><GitFork size={18} /></a>

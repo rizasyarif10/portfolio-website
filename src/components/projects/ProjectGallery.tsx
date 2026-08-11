@@ -1,12 +1,12 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef, useState } from "react";
-import { TEXT } from "../../constants/portfolio";
+import { TEXT } from "@/constants/portfolio";
 import type {
   Language,
   ProjectPreview,
   ProjectPreviewVariant,
-} from "../../types/portfolio";
-import { localize } from "../../utils/localize";
+} from "@/types/portfolio";
+import { localize } from "@/utils/localize";
 
 type ProjectGalleryProps = {
   readonly projectTitle: string;

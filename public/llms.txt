@@ -1,8 +1,8 @@
 # Mochamad Riza Syarif
 
-> Frontend Engineer with 7+ years of experience developing and maintaining web applications, dashboards, and data visualizations for internal products and client projects. Based in South Tangerang, Indonesia (UTC+7), available for remote and hybrid work.
+> Frontend Engineer with 8+ years of experience developing and maintaining web applications, dashboards, and data visualizations for internal products and client projects. Based in South Tangerang, Indonesia (UTC+7), available for remote and hybrid work.
 
-Core stack: React, Next.js, TypeScript, Vite, Redux Toolkit, Zustand, TanStack Query, Tailwind CSS, MapLibre GL, Leaflet.js, Jest, and Vitest. Main focus areas are frontend development, map and data interfaces, and quality and integration work such as REST API integration, unit testing, debugging, and refactoring.
+Core stack: React.js, Next.js, TypeScript, Vite, Redux Toolkit, Zustand, TanStack Query, Tailwind CSS, MapLibre GL, Leaflet.js, Jest, and Vitest. Main focus areas are frontend development, map and data interfaces, and quality and integration work such as REST API integration, unit testing, debugging, and refactoring.
 
 Currently open to Frontend Engineer and Web Developer opportunities.
 

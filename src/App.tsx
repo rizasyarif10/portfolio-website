@@ -1,12 +1,12 @@
-import { MobileNavigation } from "./components/layout/MobileNavigation";
-import { NavigationRail } from "./components/layout/NavigationRail";
-import { ProfileCard } from "./components/layout/ProfileCard";
-import { AboutSection } from "./components/sections/AboutSection";
-import { ContactSection } from "./components/sections/ContactSection";
-import { ResumeSection } from "./components/sections/ResumeSection";
-import { ServicesSection } from "./components/sections/ServicesSection";
-import { TechStackSection } from "./components/sections/TechStackSection";
-import { ProjectsSection } from "./components/sections/ProjectsSection";
+import { MobileNavigation } from "@/components/layout/MobileNavigation";
+import { NavigationRail } from "@/components/layout/NavigationRail";
+import { ProfileCard } from "@/components/layout/ProfileCard";
+import { AboutSection } from "@/components/sections/AboutSection";
+import { ContactSection } from "@/components/sections/ContactSection";
+import { ProjectsSection } from "@/components/sections/ProjectsSection";
+import { ResumeSection } from "@/components/sections/ResumeSection";
+import { ServicesSection } from "@/components/sections/ServicesSection";
+import { TechStackSection } from "@/components/sections/TechStackSection";
 
 function App() {
   return (

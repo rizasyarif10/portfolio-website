@@ -54,7 +54,9 @@ export function ProjectCarousel({
           <span className="grid size-9 place-items-center rounded-xl bg-[#5874d8]/10 text-[#4a63c4] max-[420px]:size-8 max-[420px]:rounded-[10px] dark:bg-[#aebeff]/10 dark:text-[#aebeff]">
             <Icon size={17} strokeWidth={1.8} />
           </span>
-          <h3 className="text-[15px] font-bold tracking-[-0.02em] max-[420px]:text-[13px]">{title}</h3>
+          <h3 className="text-[15px] font-bold tracking-[-0.02em] max-[420px]:text-[13px]">
+            {title}
+          </h3>
         </div>
 
         {projects.length > 1 && (
@@ -65,7 +67,7 @@ export function ProjectCarousel({
             </span>
             <button
               type="button"
-              className="grid size-8 place-items-center rounded-full border border-[rgba(25,44,62,0.12)] bg-white/40 text-[#192c3e] transition-[transform,background-color,color] duration-300 hover:-translate-y-px hover:bg-[#252a2d] hover:text-white dark:border-white/10 dark:bg-white/4 dark:text-[#edf1ef] dark:hover:bg-[#edf1ef] dark:hover:text-[#0b1726]"
+              className="cursor-pointer grid size-8 place-items-center rounded-full border border-[rgba(25,44,62,0.12)] bg-white/40 text-[#192c3e] transition-[transform,background-color,color] duration-300 hover:-translate-y-px hover:bg-[#252a2d] hover:text-white dark:border-white/10 dark:bg-white/4 dark:text-[#edf1ef] dark:hover:bg-[#edf1ef] dark:hover:text-[#0b1726]"
               onClick={() => moveTo(activeIndex - 1)}
               aria-label={localize(TEXT.work.previousProject, language)}
             >
@@ -73,7 +75,7 @@ export function ProjectCarousel({
             </button>
             <button
               type="button"
-              className="grid size-8 place-items-center rounded-full border border-[rgba(25,44,62,0.12)] bg-white/40 text-[#192c3e] transition-[transform,background-color,color] duration-300 hover:-translate-y-px hover:bg-[#252a2d] hover:text-white dark:border-white/10 dark:bg-white/4 dark:text-[#edf1ef] dark:hover:bg-[#edf1ef] dark:hover:text-[#0b1726]"
+              className="cursor-pointer grid size-8 place-items-center rounded-full border border-[rgba(25,44,62,0.12)] bg-white/40 text-[#192c3e] transition-[transform,background-color,color] duration-300 hover:-translate-y-px hover:bg-[#252a2d] hover:text-white dark:border-white/10 dark:bg-white/4 dark:text-[#edf1ef] dark:hover:bg-[#edf1ef] dark:hover:text-[#0b1726]"
               onClick={() => moveTo(activeIndex + 1)}
               aria-label={localize(TEXT.work.nextProject, language)}
             >
@@ -90,10 +92,7 @@ export function ProjectCarousel({
         aria-label={title}
       >
         {projects.map((project, index) => (
-          <div
-            className="min-w-full snap-start"
-            key={project.title}
-          >
+          <div className="min-w-full snap-start" key={project.title}>
             <ProjectShowcaseCard
               project={project}
               index={index}
@@ -109,7 +108,7 @@ export function ProjectCarousel({
           {projects.map((project, index) => (
             <button
               type="button"
-              className={`h-1.5 rounded-full transition-[width,background-color] duration-300 ${
+              className={`cursor-pointer h-1.5 rounded-full transition-[width,background-color] duration-300 ${
                 activeIndex === index
                   ? "w-6 bg-[#5874d8] dark:bg-[#aebeff]"
                   : "w-1.5 bg-[rgba(25,44,62,0.16)] hover:bg-[#5874d8]/45 dark:bg-white/15 dark:hover:bg-[#aebeff]/45"

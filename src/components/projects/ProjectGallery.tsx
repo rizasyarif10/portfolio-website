@@ -15,8 +15,7 @@ type ProjectGalleryProps = {
 };
 
 function PlaceholderCanvas({ variant }: { variant: ProjectPreviewVariant }) {
-  const shell =
-    "rounded-[7px] border border-white/8 bg-white/[0.07]";
+  const shell = "rounded-[7px] border border-white/8 bg-white/[0.07]";
 
   return (
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_18%,rgba(88,116,216,0.34),transparent_34%),linear-gradient(145deg,#1d2529_0%,#293237_100%)] p-[clamp(9px,2vw,16px)]">
@@ -155,8 +154,7 @@ export function ProjectGallery({
   const activePreview = previews[activeIndex];
 
   const selectPreview = (nextIndex: number) => {
-    const normalizedIndex =
-      (nextIndex + previews.length) % previews.length;
+    const normalizedIndex = (nextIndex + previews.length) % previews.length;
 
     setActiveIndex(normalizedIndex);
     thumbnailRefs.current[normalizedIndex]?.scrollIntoView({
@@ -199,7 +197,8 @@ export function ProjectGallery({
           </span>
           {previews.length > 1 && (
             <span className="font-mono text-[8px] font-bold text-white/90">
-              {String(activeIndex + 1).padStart(2, "0")} / {String(previews.length).padStart(2, "0")}
+              {String(activeIndex + 1).padStart(2, "0")} /{" "}
+              {String(previews.length).padStart(2, "0")}
             </span>
           )}
         </div>
@@ -207,7 +206,7 @@ export function ProjectGallery({
           <div className="absolute right-3 bottom-3 flex gap-1.5 opacity-0 transition-opacity duration-300 group-hover/gallery:opacity-100 max-[760px]:opacity-100">
             <button
               type="button"
-              className="grid size-7 place-items-center rounded-full border border-white/15 bg-[#171d20]/80 text-white backdrop-blur transition-colors hover:bg-white hover:text-[#192c3e]"
+              className="cursor-pointer grid size-7 place-items-center rounded-full border border-white/15 bg-[#171d20]/80 text-white backdrop-blur transition-colors hover:bg-white hover:text-[#192c3e]"
               onClick={showPrevious}
               aria-label={`${projectTitle}: previous preview`}
             >
@@ -215,7 +214,7 @@ export function ProjectGallery({
             </button>
             <button
               type="button"
-              className="grid size-7 place-items-center rounded-full border border-white/15 bg-[#171d20]/80 text-white backdrop-blur transition-colors hover:bg-white hover:text-[#192c3e]"
+              className="cursor-pointer grid size-7 place-items-center rounded-full border border-white/15 bg-[#171d20]/80 text-white backdrop-blur transition-colors hover:bg-white hover:text-[#192c3e]"
               onClick={showNext}
               aria-label={`${projectTitle}: next preview`}
             >
@@ -245,7 +244,7 @@ export function ProjectGallery({
                 ref={(element) => {
                   thumbnailRefs.current[index] = element;
                 }}
-                className={`group/thumb overflow-hidden rounded-[10px] border p-1 text-left transition-[border-color,background-color,transform] duration-300 hover:-translate-y-px max-[420px]:p-0.5 ${
+                className={`cursor-pointer group/thumb overflow-hidden rounded-[10px] border p-1 text-left transition-[border-color,background-color,transform] duration-300 hover:-translate-y-px max-[420px]:p-0.5 ${
                   previews.length > 4
                     ? "w-28 shrink-0 snap-start max-[520px]:w-23"
                     : ""

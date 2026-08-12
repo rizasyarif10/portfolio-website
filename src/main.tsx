@@ -5,12 +5,14 @@ import { Analytics } from "@vercel/analytics/react";
 import App from "@/App";
 import { LanguageProvider } from "@/contexts/LanguageProvider";
 import "@/index.css";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <LanguageProvider>
       <App />
       <Analytics />
+      <SpeedInsights />
     </LanguageProvider>
   </StrictMode>,
 );

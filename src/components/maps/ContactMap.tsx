@@ -88,9 +88,25 @@ export function ContactMap({
     map.addControl(new AttributionControl({ compact: true }), "bottom-right");
     map.on("zoom", () => setZoomLevel(map.getZoom()));
 
+    const mapContainer = containerRef.current;
+    let containerWidth = mapContainer.clientWidth;
+    let containerHeight = mapContainer.clientHeight;
+    let resizeFrame = 0;
+    const resizeObserver = new ResizeObserver(() => {
+      const nextWidth = mapContainer.clientWidth;
+      const nextHeight = mapContainer.clientHeight;
+      if (nextWidth === containerWidth && nextHeight === containerHeight) return;
+
+      containerWidth = nextWidth;
+      containerHeight = nextHeight;
+      cancelAnimationFrame(resizeFrame);
+      resizeFrame = requestAnimationFrame(() => map.resize());
+    });
+    resizeObserver.observe(mapContainer);
+
     const markerElement = document.createElement("div");
     markerElement.className =
-      "relative grid size-13.5 cursor-pointer place-items-center";
+      "absolute top-0 left-0 grid size-13.5 cursor-pointer place-items-center";
     markerElement.setAttribute("role", "img");
     const radarRings = Array.from({ length: 3 }, (_, index) => {
       const ring = document.createElement("span");
@@ -149,6 +165,8 @@ export function ContactMap({
     popupRef.current = popup;
 
     return () => {
+      resizeObserver.disconnect();
+      cancelAnimationFrame(resizeFrame);
       map.remove();
       mapRef.current = null;
       markerElementRef.current = null;
@@ -198,7 +216,7 @@ export function ContactMap({
 
   return (
     <div
-      className={`relative h-full w-full ${
+      className={`absolute inset-0 overflow-hidden ${
         baseLayer === "light"
           ? "dark:[&_.maplibregl-canvas]:brightness-[0.62] dark:[&_.maplibregl-canvas]:contrast-[1.08] dark:[&_.maplibregl-canvas]:invert dark:[&_.maplibregl-canvas]:hue-rotate-180"
           : ""

@@ -26,6 +26,10 @@ export function ContactSection() {
   const { language } = useLanguage();
   const [baseLayer, setBaseLayer] = useState<BaseMapLayer>("light");
   const [isLayerMenuOpen, setIsLayerMenuOpen] = useState(false);
+  const [shouldLoadMap, setShouldLoadMap] = useState(
+    () => !("IntersectionObserver" in window),
+  );
+  const mapContainerRef = useRef<HTMLDivElement>(null);
   const layerControlRef = useRef<HTMLDivElement>(null);
   const location = localize(PROFILE.location, language);
   const mapLayers: readonly {
@@ -59,6 +63,24 @@ export function ContactSection() {
   const activeLayerLabel =
     mapLayers.find((layer) => layer.value === baseLayer)?.label ??
     localize(TEXT.contact.lightLayer, language);
+
+  useEffect(() => {
+    const mapContainer = mapContainerRef.current;
+    if (!mapContainer || shouldLoadMap) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry?.isIntersecting) return;
+
+        setShouldLoadMap(true);
+        observer.disconnect();
+      },
+      { rootMargin: "400px 0px" },
+    );
+
+    observer.observe(mapContainer);
+    return () => observer.disconnect();
+  }, [shouldLoadMap]);
 
   useEffect(() => {
     if (!isLayerMenuOpen) return;
@@ -152,21 +174,30 @@ export function ContactSection() {
           </div>
         </div>
 
-        <div className="relative min-h-107.5 overflow-hidden max-[1024px]:order-1 max-[1024px]:min-h-72.5 max-[420px]:min-h-65">
-          <Suspense
-            fallback={
-              <div className="grid h-full place-items-center bg-[#dedbd2] text-xs font-semibold text-[rgba(25,44,62,0.66)] dark:bg-[#0c141c] dark:text-[rgba(237,241,239,0.5)]">
-                {localize(TEXT.contact.mapLoading, language)}
-              </div>
-            }
-          >
-            <ContactMap
-              locationLabel={location}
-              availabilityText={localize(TEXT.contact.mapPopup, language)}
-              resetLabel={localize(TEXT.contact.resetMap, language)}
-              baseLayer={baseLayer}
-            />
-          </Suspense>
+        <div
+          ref={mapContainerRef}
+          className="relative min-h-107.5 overflow-hidden max-[1024px]:order-1 max-[1024px]:min-h-72.5 max-[420px]:min-h-65"
+        >
+          {shouldLoadMap ? (
+            <Suspense
+              fallback={
+                <div className="grid h-full place-items-center bg-[#dedbd2] text-xs font-semibold text-[rgba(25,44,62,0.66)] dark:bg-[#0c141c] dark:text-[rgba(237,241,239,0.5)]">
+                  {localize(TEXT.contact.mapLoading, language)}
+                </div>
+              }
+            >
+              <ContactMap
+                locationLabel={location}
+                availabilityText={localize(TEXT.contact.mapPopup, language)}
+                resetLabel={localize(TEXT.contact.resetMap, language)}
+                baseLayer={baseLayer}
+              />
+            </Suspense>
+          ) : (
+            <div className="grid h-full place-items-center bg-[#dedbd2] text-xs font-semibold text-[rgba(25,44,62,0.66)] dark:bg-[#0c141c] dark:text-[rgba(237,241,239,0.5)]">
+              {localize(TEXT.contact.mapLoading, language)}
+            </div>
+          )}
           <div className="pointer-events-none absolute top-3 left-3 z-4 flex max-w-[calc(100%-70px)] items-center gap-2 rounded-[13px] border border-[rgba(25,44,62,0.12)] bg-white/90 px-3 py-2.5 text-[#192c3e] shadow-[0_8px_24px_rgba(25,44,62,0.14)] backdrop-blur-xl">
             <span className="grid size-7 shrink-0 place-items-center rounded-[9px] bg-[#5874d8]/10 text-[#4a63c4]">
               <MapPinned size={14} />

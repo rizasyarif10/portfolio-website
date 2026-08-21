@@ -446,7 +446,7 @@ export const INDEPENDENT_PROJECTS: readonly Project[] = [
 
 export const EXPERIENCES: readonly Experience[] = [
   {
-    period: localized("Nov 2018 — Present", "Nov 2018 — Sekarang"),
+    period: localized("Nov 2018 — Aug 2026", "Nov 2018 — Aug 2026"),
     company: "PT Bhumi Varta Technology",
     role: localized(
       "Frontend Engineer (Web Application)",
@@ -585,12 +585,7 @@ export const SKILL_GROUPS: readonly SkillGroup[] = [
       "State Management & Data Fetching",
       "Manajemen State & Data Fetching",
     ),
-    items: [
-      "Redux Toolkit",
-      "Redux Persist",
-      "Zustand",
-      "TanStack Query",
-    ],
+    items: ["Redux Toolkit", "Redux Persist", "Zustand", "TanStack Query"],
   },
   {
     label: localized("UI & Styling", "UI & Styling"),
@@ -607,10 +602,7 @@ export const SKILL_GROUPS: readonly SkillGroup[] = [
     items: ["MapLibre GL", "Leaflet.js", "GeoJSON", "H3.js"],
   },
   {
-    label: localized(
-      "Backend, APIs & Database",
-      "Backend, API & Database",
-    ),
+    label: localized("Backend, APIs & Database", "Backend, API & Database"),
     items: [
       "Node.js",
       "Express.js",
